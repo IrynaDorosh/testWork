@@ -1,6 +1,6 @@
 package com.plusSmilebox.pages;
 
-import com.plusSmilebox.libs.Constants;
+import com.plusSmilebox.util.Constants;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;

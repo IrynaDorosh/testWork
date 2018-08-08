@@ -29,8 +29,6 @@ public class MainPage {
     @FindBy(xpath="//p[@class='sub-title']/span[@class='sub-name']")
     public WebElement SubtitleNameAfterFiltering;
 
-
-
     /**
      * METHODS
      */
@@ -39,11 +37,5 @@ public class MainPage {
         dropdownTemplates.click();
         Assert.assertTrue(listOfTemplates.isEnabled());
         ChristmasTemplates.click();
-
-
-
     }
-
-
-
 }
