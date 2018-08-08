@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SMILE FIRST TESTS">
+
+    <test name="SMILE FIRST TESTS">
+
+        <classes>
+            <class name="initialTestSuite.FirstTestSet" />
+
+        </classes>
+
+    </test>
+
+</suite>
