@@ -1,0 +1,8 @@
+*.xml
+!testng.xml
+*.iml
+.idea
+screenShots/*.png
+libs/*.*
+target/*.*/
+test-output
