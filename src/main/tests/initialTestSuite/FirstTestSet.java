@@ -1,7 +1,8 @@
 package initialTestSuite;
 
 import com.plusSmilebox.pages.FBloginPage;
-import com.plusSmilebox.pages.LoginPage;
+import com.plusSmilebox.pages.LogInWithEmailPage;
+import com.plusSmilebox.pages.StartPage;
 import com.plusSmilebox.pages.MainPage;
 import com.plusSmilebox.util.Constants;
 import org.testng.Assert;
@@ -16,46 +17,59 @@ import java.util.concurrent.TimeUnit;
 @Listeners(ListenerSmile.class)
 public class FirstTestSet extends BaseTest {
 
-    private LoginPage loginPage;
+    private StartPage startPage;
     private FBloginPage fBloginPage;
     private MainPage mainPage;
+    private LogInWithEmailPage logInWithEmailPage;
 
     @BeforeClass
     public void beforeClass() {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        loginPage = new LoginPage(driver);
+        startPage = new StartPage(driver);
         fBloginPage= new FBloginPage(driver);
+        logInWithEmailPage = new LogInWithEmailPage(driver);
         mainPage = new MainPage(driver);
     }
 
     @Test(priority = 1)
     public void loginViaFacebook() throws InterruptedException, IOException {
-        driver.get(Constants.LINK_LOGIN_PAGE);
-        loginPage.buttonLoginWithFB.click();
+        driver.get(Constants.LINK_START_PAGE);
+        startPage.buttonLoginWithFB.click();
         fBloginPage.logInWithFBcredentials();
-        Assert.assertEquals("Smilebox Dashboard8", driver.getTitle());
+        Assert.assertEquals("Smilebox Dashboard", driver.getTitle());
     }
+
+    @Test(priority = 1)
+    public void logInWithEmail() throws InterruptedException {
+        driver.get(Constants.LINK_START_PAGE);
+        startPage.linkEmail.click();
+        logInWithEmailPage.logInWithEmail();
+         Thread.sleep(2000);
+        Assert.assertEquals( driver.getTitle(), "Smilebox Dashboard");
+    }
+
+
 
     @Test(priority = 2)
     public void loginViaFacebook2() throws InterruptedException, IOException {
-        driver.get(Constants.LINK_LOGIN_PAGE);
-        loginPage.buttonLoginWithFB.click();
+        driver.get(Constants.LINK_START_PAGE);
+        startPage.buttonLoginWithFB.click();
         fBloginPage.logInWithFBcredentials();
-        Assert.assertEquals("Smilebox Dashboard899", driver.getTitle());
+        Assert.assertEquals(driver.getTitle(),"Smilebox Dashboard");
     }
 
     @Test(priority = 3)
     public void checkTemplatesChristmas() throws InterruptedException {
         driver.get(Constants.LINK_MAIN_PAGE);
         mainPage.selectChristmasTemplatesFromDropdown();
-        Assert.assertEquals("Christmas", mainPage.SubtitleNameAfterFiltering.getText());
+        Assert.assertEquals( mainPage.SubtitleNameAfterFiltering.getText(), "Christmas");
         Thread.sleep(2000);
     }
 
     @AfterClass
     public void afterClass(){
-        driver.close();
+        driver.quit();
     }
 }
 

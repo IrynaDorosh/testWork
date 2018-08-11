@@ -1,33 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f37b4fc-d6fe-40d5-846a-45b2800a9e21" name="Default Changelist" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/tests/initialTestSuite/BaseTest.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+    <list default="true" id="7f37b4fc-d6fe-40d5-846a-45b2800a9e21" name="Default Changelist" comment="screenshot creation in listener added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SmileProject.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/classes/com/plusSmilebox/libs/Constants.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/classes/com/plusSmilebox/libs/Helpers.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/classes/com/plusSmilebox/libs/ListenerSmile.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/classes/com/plusSmilebox/pages/FBloginPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/classes/com/plusSmilebox/pages/LoginPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/classes/com/plusSmilebox/pages/MainPage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/classes/java/com/plusSmilebox/libs/chromedriver.exe" afterPath="$PROJECT_DIR$/libs/chromedriver.exe" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/libs/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/Constants.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/libs/Helpers.java" afterPath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/Helpers.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/libs/chromedriver.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/FBloginPage.java" afterPath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/FBloginPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/LoginPage.java" afterPath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/LoginPage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/MainPage.java" afterPath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/MainPage.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/LoginPage.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/Constants.java" />
       <change beforePath="$PROJECT_DIR$/src/main/tests/initialTestSuite/FirstTestSet.java" afterPath="$PROJECT_DIR$/src/main/tests/initialTestSuite/FirstTestSet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/tests/initialTestSuite/ListenerSmile.java" afterPath="$PROJECT_DIR$/src/main/tests/initialTestSuite/ListenerSmile.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/plusSmilebox/libs/Constants.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/plusSmilebox/libs/Helpers.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/plusSmilebox/pages/FBloginPage.class" afterPath="$PROJECT_DIR$/target/classes/com/plusSmilebox/pages/FBloginPage.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/plusSmilebox/pages/LoginPage.class" afterPath="$PROJECT_DIR$/target/classes/com/plusSmilebox/pages/LoginPage.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/plusSmilebox/pages/MainPage.class" afterPath="$PROJECT_DIR$/target/classes/com/plusSmilebox/pages/MainPage.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/initialTestSuite/FirstTestSet.class" afterPath="$PROJECT_DIR$/target/test-classes/initialTestSuite/FirstTestSet.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/initialTestSuite/ListenerSmile.class" afterPath="$PROJECT_DIR$/target/test-classes/initialTestSuite/ListenerSmile.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -88,25 +66,34 @@
       <file leaf-file-name="FirstTestSet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/tests/initialTestSuite/FirstTestSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+            <state relative-caret-position="443">
+              <caret line="47" column="10" lean-forward="false" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1892#1893#0" expanded="true" />
-                <element signature="e#1922#1923#0" expanded="true" />
+                <element signature="method#loginViaFacebook#0;class#FirstTestSet#0" expanded="false" />
+                <element signature="e#2375#2376#0" expanded="true" />
+                <element signature="e#2404#2405#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListenerSmile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/tests/initialTestSuite/ListenerSmile.java">
+      <file leaf-file-name="ObjectFactoryImpl.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/internal/ObjectFactoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-112">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="320">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassHelper.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/internal/ClassHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="435" column="0" lean-forward="false" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,24 +101,60 @@
       <file leaf-file-name="BaseTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/tests/initialTestSuite/BaseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="160">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StartPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/StartPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="12" column="47" lean-forward="true" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#492#493#0" expanded="true" />
-                <element signature="e#542#543#0" expanded="true" />
-                <element signature="e#582#583#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/LoginPage.java">
+      <file leaf-file-name="LogInWithEmailPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/LogInWithEmailPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+            <state relative-caret-position="231">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="5" column="74" lean-forward="false" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/MainPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FBloginPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/FBloginPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,6 +175,7 @@
     <findStrings>
       <find>https://plus.smilebox.com/Account/loginsocial</find>
       <find>tostring</find>
+      <find>//button[@id='Facebook']/span</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,7 +208,6 @@
         <option value="$PROJECT_DIR$/src/main/tests/initialTestSuite/qqq.java" />
         <option value="$PROJECT_DIR$/src/main/tests/initialTestSuite/TestBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/plusSmilebox/libs/ListenerSmile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/FBloginPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/MainPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/ListenerSmile.java" />
@@ -192,7 +215,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/LoginPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/Helpers.java" />
         <option value="$PROJECT_DIR$/src/main/tests/initialTestSuite/ListenerSmile.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/LogInWithEmailPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/StartPage.java" />
         <option value="$PROJECT_DIR$/src/main/tests/initialTestSuite/FirstTestSet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/Constants.java" />
       </list>
     </option>
   </component>
@@ -225,19 +252,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
               <item name="testWork" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testWork" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
@@ -316,67 +339,7 @@
             </path>
             <path>
               <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testWork" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testWork" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testWork" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testWork" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="plusSmilebox" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="text" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
@@ -403,15 +366,6 @@
               <item name="testng-6.14.3.jar" type="462c0819:PsiDirectoryNode" />
               <item name="org" type="462c0819:PsiDirectoryNode" />
               <item name="testng" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.testng:testng:6.14.3" type="70bed36:NamedLibraryElementNode" />
-              <item name="testng-6.14.3.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="testng" type="462c0819:PsiDirectoryNode" />
-              <item name="annotations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
@@ -422,21 +376,11 @@
               <item name="testng" type="462c0819:PsiDirectoryNode" />
               <item name="internal" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="testWork" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.testng:testng:6.14.3" type="70bed36:NamedLibraryElementNode" />
-              <item name="testng-6.14.3.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="testng" type="462c0819:PsiDirectoryNode" />
-              <item name="reporters" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -444,22 +388,27 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/StartPage.java" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/StartPage.java" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="initialTestSuite" />
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\SmileProject\src\test" />
-      <recent name="E:\SmileProject\src\main\java\com\plusSmilebox\libs" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Prog\testWork\testWork\src\main\java\com\plusSmilebox\util" />
       <recent name="D:\Prog\testWork\testWork" />
       <recent name="D:\Prog\testWork\testWork\src\main\java\com\plusSmilebox\libs" />
       <recent name="E:\SmileProject\src\main" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="initialTestSuite" />
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.plusSmilebox.pages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Prog\testWork\testWork" />
+      <recent name="E:\SmileProject\src\test" />
+      <recent name="E:\SmileProject\src\main\java\com\plusSmilebox\libs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -474,7 +423,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.FirstTestSet.a_loginViaFb">
+  <component name="RunManager" selected="TestNG.FirstTestSet.logInWithEmail">
     <configuration name="FirstTestSet" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="SmileProject" />
@@ -583,47 +532,52 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="FirstTestSet.login" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="FirstTestSet.logInWithEmail" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="initialTestSuite.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <module name="SmileProject" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" value="" />
+      <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="initialTestSuite" />
       <option name="MAIN_CLASS_NAME" value="initialTestSuite.FirstTestSet" />
-      <option name="METHOD_NAME" value="login" />
-      <option name="GROUP_NAME" value="" />
+      <option name="METHOD_NAME" value="logInWithEmail" />
+      <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
+        <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" value="" />
+      <option name="PROPERTIES_FILE" />
       <envs />
       <properties />
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.FirstTestSet.login" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.FirstTestSet" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.FirstTestSet.checkTemplatesHolidays" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.FirstTestSet.a_loginViaFb" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.FirstTestSet.checkTemplatesChristmas" />
+      <item index="0" class="java.lang.String" itemvalue="TestNG.FirstTestSet" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.FirstTestSet.checkTemplatesHolidays" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.FirstTestSet.a_loginViaFb" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.FirstTestSet.checkTemplatesChristmas" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.FirstTestSet.logInWithEmail" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.FirstTestSet.a_loginViaFb" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.FirstTestSet" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.FirstTestSet.checkTemplatesChristmas" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.FirstTestSet.checkTemplatesHolidays" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.FirstTestSet.login" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.FirstTestSet.logInWithEmail" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.FirstTestSet.a_loginViaFb" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.FirstTestSet" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.FirstTestSet.checkTemplatesChristmas" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.FirstTestSet.checkTemplatesHolidays" />
       </list>
     </recent_temporary>
   </component>
@@ -641,30 +595,31 @@
       <option name="presentableId" value="Default" />
       <updated>1533632803773</updated>
     </task>
+    <task id="LOCAL-00001" summary="screenshot creation in listener added">
+      <created>1533757567671</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1533757567671</updated>
+    </task>
+    <task id="LOCAL-00002" summary="gitignore added">
+      <created>1533757845858</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1533757845858</updated>
+    </task>
+    <task id="LOCAL-00003" summary="***">
+      <created>1533758049536</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1533758049536</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FirstTestSet_a_loginViaFb - 2018.08.08 at 16h 59m 23s.xml">
-      <configuration name="FirstTestSet.a_loginViaFb" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FirstTestSet_a_loginViaFb - 2018.08.08 at 17h 00m 18s.xml">
-      <configuration name="FirstTestSet.a_loginViaFb" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FirstTestSet_a_loginViaFb - 2018.08.08 at 21h 30m 36s.xml">
-      <configuration name="FirstTestSet.a_loginViaFb" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FirstTestSet_a_loginViaFb - 2018.08.08 at 21h 52m 59s.xml">
-      <configuration name="FirstTestSet.a_loginViaFb" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FirstTestSet_a_loginViaFb - 2018.08.08 at 21h 54m 46s.xml">
-      <configuration name="FirstTestSet.a_loginViaFb" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FirstTestSet_a_loginViaFb - 2018.08.08 at 21h 57m 38s.xml">
-      <configuration name="FirstTestSet.a_loginViaFb" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="FirstTestSet_a_loginViaFb - 2018.08.08 at 21h 59m 02s.xml">
-      <configuration name="FirstTestSet.a_loginViaFb" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="FirstTestSet_a_loginViaFb - 2018.08.08 at 22h 18m 05s.xml">
       <configuration name="FirstTestSet.a_loginViaFb" configurationId="TestNG" />
     </history-entry>
@@ -673,6 +628,27 @@
     </history-entry>
     <history-entry file="FirstTestSet_checkTemplatesChristmas - 2018.08.08 at 17h 01m 54s.xml">
       <configuration name="FirstTestSet.checkTemplatesChristmas" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FirstTestSet_logInWithEmail - 2018.08.11 at 17h 03m 22s.xml">
+      <configuration name="FirstTestSet.logInWithEmail" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FirstTestSet_logInWithEmail - 2018.08.11 at 17h 04m 26s.xml">
+      <configuration name="FirstTestSet.logInWithEmail" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FirstTestSet_logInWithEmail - 2018.08.11 at 17h 11m 52s.xml">
+      <configuration name="FirstTestSet.logInWithEmail" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FirstTestSet_logInWithEmail - 2018.08.11 at 17h 40m 11s.xml">
+      <configuration name="FirstTestSet.logInWithEmail" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FirstTestSet_logInWithEmail - 2018.08.11 at 17h 43m 35s.xml">
+      <configuration name="FirstTestSet.logInWithEmail" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FirstTestSet_logInWithEmail - 2018.08.11 at 17h 47m 41s.xml">
+      <configuration name="FirstTestSet.logInWithEmail" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FirstTestSet_logInWithEmail - 2018.08.11 at 17h 49m 26s.xml">
+      <configuration name="FirstTestSet.logInWithEmail" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -686,76 +662,51 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36717662" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.62308764" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26147428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36717662" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20860077" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24967907" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18421052" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32823366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28046745" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27955493" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24967907" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="screenshot creation in listener added" />
+    <MESSAGE value="gitignore added" />
+    <MESSAGE value="***" />
+    <option name="LAST_COMMIT_MESSAGE" value="***" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/tests/initialTestSuite/BaseTest.java</url>
+          <line>13</line>
+          <properties field="driver" class="initialTestSuite.BaseTest" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/tests/initialTestSuite/ListenerSmile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/Helpers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#740#741#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="58" lean-forward="false" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3.jar!/org/testng/internal/Invoker.class" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.10.0/selenium-api-3.10.0.jar!/org/openqa/selenium/TakesScreenshot.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/io/File.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/qqq.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/libs/Constants.class" />
     <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/libs/Helpers.class" />
     <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/libs/ListenerSmile.class" />
     <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/pages/FBloginPage.class" />
@@ -769,65 +720,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/pages/MainPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="34" column="60" lean-forward="false" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/pages/FBloginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/pages/MainPage.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/pages/FBloginPage.java" />
     <entry file="file://$PROJECT_DIR$/src/test/initTestSuite/TestSuiteFirst.java" />
     <entry file="file://$PROJECT_DIR$/src/main/tests/initialTestSuite/qqq.java" />
     <entry file="file://$PROJECT_DIR$/src/main/tests/initialTestSuite/TestBase.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/libs/Helpers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/libs/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/pages/LoginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/FBloginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/MainPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/libs/Helpers.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/libs/Constants.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/classes/com/plusSmilebox/pages/LoginPage.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="688">
@@ -840,9 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <marker date="1533752289402" expanded="false" signature="0:104" ph="/.../" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -850,7 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,7 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,7 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -874,7 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,28 +785,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="1001" column="54" lean-forward="true" selection-start-line="1001" selection-start-column="6" selection-end-line="1001" selection-end-column="54" />
-          <folding>
-            <element signature="e#6390#6391#0" expanded="false" />
-            <element signature="e#6438#6439#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screenShots/a_loginViaFb.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screenShots/newFolder/screenshot189766748585775223.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/screenShots/a_loginViaFb.png" />
+    <entry file="file://$PROJECT_DIR$/screenShots/newFolder/screenshot189766748585775223.png" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/text/DateFormat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="58" column="62" lean-forward="false" selection-start-line="58" selection-start-column="62" selection-end-line="58" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,28 +801,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3168">
           <caret line="577" column="11" lean-forward="false" selection-start-line="577" selection-start-column="11" selection-end-line="577" selection-end-column="11" />
-          <folding>
-            <element signature="e#23443#23444#0" expanded="false" />
-            <element signature="e#23515#23516#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screenShots/a_loginViaFb-08-08-2018___22-22-13.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screenShots/a_loginViaFb-10-18-02---08-08-2018.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/screenShots/a_loginViaFb-10-18-02---08-08-2018.png" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/internal/ExitCodeListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -950,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -958,12 +823,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#740#741#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/ISuite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1344">
+          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/ITestContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="81" column="12" lean-forward="true" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/ITestResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="94" column="11" lean-forward="false" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -975,66 +855,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/tests/initialTestSuite/BaseTest.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/ISuite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1344">
-          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/ITestContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="81" column="12" lean-forward="true" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/ITestResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="94" column="11" lean-forward="false" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="78" lean-forward="true" selection-start-line="6" selection-start-column="78" selection-end-line="6" selection-end-column="78" />
-          <folding />
+        <state relative-caret-position="112">
+          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/tests/initialTestSuite/ListenerSmile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-112">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="64">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/LoginPage.java">
+    <entry file="file://$PROJECT_DIR$/screenShots/a_loginViaFb-08-08-2018___22-22-13.png" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        <state relative-caret-position="432">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screenShots/logInWithEmail-11-08-2018___17-04-23.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screenShots/logInWithEmail-11-08-2018___17-11-49.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/FBloginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/tests/initialTestSuite/BaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/internal/ObjectFactoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/internal/ClassHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="435" column="0" lean-forward="false" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screenShots/logInWithEmail-11-08-2018___17-40-09.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/LogInWithEmailPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screenShots/logInWithEmail-11-08-2018___17-43-32.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/util/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="74" lean-forward="false" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/plusSmilebox/pages/StartPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="47" lean-forward="true" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1043,12 +963,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/tests/initialTestSuite/FirstTestSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        <state relative-caret-position="443">
+          <caret line="47" column="10" lean-forward="false" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1892#1893#0" expanded="true" />
-            <element signature="e#1922#1923#0" expanded="true" />
+            <element signature="method#loginViaFacebook#0;class#FirstTestSet#0" expanded="false" />
+            <element signature="e#2375#2376#0" expanded="true" />
+            <element signature="e#2404#2405#0" expanded="true" />
           </folding>
         </state>
       </provider>
