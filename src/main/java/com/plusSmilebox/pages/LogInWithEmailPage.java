@@ -1,6 +1,7 @@
 package com.plusSmilebox.pages;
 
 import com.plusSmilebox.util.Constants;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,6 +38,8 @@ public class LogInWithEmailPage {
         driver.manage().deleteAllCookies();
         inputFieldEmail.sendKeys(Constants.EMAIL_FOR_REGISTRATION_VIA_FB);
         inputFieldPassword.sendKeys(Constants.PASSWORD_FOR_REGISTRATION_VIA_FB);
+//        JavascriptExecutor js = (JavascriptExecutor)driver;
+//        js.executeScript("arguments[0].click();", buttonSubmit);
         buttonSubmit.click();
     }
 
