@@ -24,19 +24,9 @@ public class FirstTestSet extends BaseTest {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         startPage = new StartPage(driver);
-        fBloginPage= new FBloginPage(driver);
+        fBloginPage = new FBloginPage(driver);
         logInWithEmailPage = new LogInWithEmailPage(driver);
         dashboardPage = new DashboardPage(driver);
-    }
-
-    @Test(priority = 2)
-    public void logInWithEmail() throws InterruptedException {
-        driver.get(Constants.LINK_START_PAGE);
-        startPage.linkLogIn.click();
-        logInWithEmailPage.logInWithEmail();
-         Thread.sleep(2000);
-         Assert.assertEquals( driver.getTitle(), "Smilebox Dashboard");
-
     }
 
     @Test(priority = 1)
@@ -48,29 +38,53 @@ public class FirstTestSet extends BaseTest {
         dashboardPage.logOutViaProvileDropdownOnDashboarPage();
     }
 
-
-//    @Test(priority = 2)
-//    public void loginViaFacebook2() throws InterruptedException, IOException {
-//        driver.get(Constants.LINK_START_PAGE);
-//        startPage.buttonLoginWithFB.click();
-//        fBloginPage.logInWithFBcredentials();
-//        Assert.assertEquals(driver.getTitle(),"Smilebox Dashboard");
-//    }
+    @Test(priority = 2)
+    public void logInWithEmail() throws InterruptedException {
+        driver.get(Constants.LINK_START_PAGE);
+        startPage.linkLogIn.click();
+        logInWithEmailPage.logInWithEmail();
+        Thread.sleep(2000);
+        Assert.assertEquals(driver.getTitle(), "Smilebox Dashboard");
+    }
 
     @Test(priority = 3)
     public void checkTemplatesChristmas() throws InterruptedException {
         driver.get(Constants.LINK_MAIN_PAGE);
-        dashboardPage.selectChristmasTemplatesFromDropdown();
-        Assert.assertEquals( dashboardPage.subtitleNameAfterFiltering.getText(), "Christmas");
+        dashboardPage.selectChristmasTemplatesFromDropdownInBarHeader();
+        Assert.assertEquals(dashboardPage.subtitleNameAfterFiltering.getText(), "Christmas");
         Thread.sleep(2000);
     }
 
 
 
+    @Test(priority = 3)
+    public void checkAllCategoriesServices() throws InterruptedException {
+        logInEmail();
+        driver.manage().window().maximize();
+        dashboardPage.buttonCloseFromMarketingWrapper.click();
+        Thread.sleep(1000);
+        dashboardPage.selectServicesTemplatesFromDropDownInFilters();
+        Thread.sleep(2000);
+
+
+    }
+
 
     @AfterClass
-    public void afterClass(){
+    public void afterClass() {
         driver.quit();
     }
+
+    private void logInEmail() throws InterruptedException {
+        driver.get(Constants.LINK_START_PAGE);
+        startPage.linkLogIn.click();
+        logInWithEmailPage.logInWithEmail();
+        Thread.sleep(2000);
+        Assert.assertEquals(driver.getTitle(), "Smilebox Dashboard");
+    }
 }
+
+
+
+
 

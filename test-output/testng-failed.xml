@@ -6,9 +6,8 @@
       <class name="testSuite.FirstTestSet">
         <methods>
           <include name="beforeClass"/>
-          <include name="checkTemplatesChristmas"/>
+          <include name="checkAllCategoriesServices"/>
           <include name="afterClass"/>
-          <include name="logInWithEmail"/>
         </methods>
       </class> <!-- testSuite.FirstTestSet -->
     </classes>

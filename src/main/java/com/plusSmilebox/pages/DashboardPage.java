@@ -18,22 +18,38 @@ public class DashboardPage {
     public WebElement logoSmilebox;
 
     @FindBy(xpath="//span[text() = 'TEMPLATES']")
-    public WebElement dropdownTemplates;
+    public WebElement dropdownTemplatesFromDropdownInBarHeader;
 
     @FindBy(xpath="//div[@class = 'designs-list']")
-    public WebElement listOfTemplates;
+    public WebElement listOfTemplatesFromDropdownInBarHeader;
 
     @FindBy(xpath="//p[@class='bar-menu-subcategory-name' and text() = 'Christmas']")
-    public WebElement ChristmasTemplates;
+    public WebElement ChristmasTemplatesFromDropdownInBarHeader;
 
     @FindBy(xpath="//p[@class='sub-title']/span[@class='sub-name']")
     public WebElement subtitleNameAfterFiltering;
 
     @FindBy (id="bar-pf-avatar")
     public WebElement iconProfileDropdown;
-
     @FindBy (id="signout")
     public WebElement buttonLogOut;
+
+    @FindBy (xpath = "//div[@class='all-categories-container']")
+    public WebElement dropDownAllCategoriesInFilters;
+
+    @FindBy(xpath="//div[@class=\"sb-vbar-float-wrapper\"]")
+    public WebElement listDropDownOfAllCategories;
+
+    @FindBy (xpath="//li[@class='filter-subcategory']") //change to Services
+    public WebElement servicesFilerFromFilters;
+
+    @FindBy (xpath="//div[@class='btn-close' and text()='Halloween']")
+    public WebElement buttonCloseFromMarketingWrapper;
+
+
+
+
+
 
 
     /**
@@ -47,9 +63,17 @@ public class DashboardPage {
       Assert.assertNotEquals( driver.getTitle(), "Smilebox Dashboard");
     }
 
-    public void selectChristmasTemplatesFromDropdown(){
-        dropdownTemplates.click();
-        Assert.assertTrue(listOfTemplates.isEnabled());
-        ChristmasTemplates.click();
+    public void selectChristmasTemplatesFromDropdownInBarHeader(){
+        dropdownTemplatesFromDropdownInBarHeader.click();
+        Assert.assertTrue(listOfTemplatesFromDropdownInBarHeader.isEnabled());
+        ChristmasTemplatesFromDropdownInBarHeader.click();
+    }
+
+    public void selectServicesTemplatesFromDropDownInFilters() throws InterruptedException {
+        dropDownAllCategoriesInFilters.click();
+        Assert.assertTrue(listDropDownOfAllCategories.isEnabled());
+        Thread.sleep(2000);
+        servicesFilerFromFilters.click();
+
     }
 }
