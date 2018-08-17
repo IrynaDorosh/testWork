@@ -9,8 +9,5 @@
         <module name="SmileProject" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="SmileProject" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
