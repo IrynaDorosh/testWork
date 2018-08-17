@@ -58,12 +58,11 @@ public class FirstTestSet extends BaseTest {
 
 
     @Test(priority = 3)
-    public void checkAllCategoriesServices() throws InterruptedException {
+    public void checkThatFilterWorksInAllCategories() throws InterruptedException {
         logInEmail();
         driver.manage().window().maximize();
         dashboardPage.buttonCloseFromMarketingWrapper.click();
-        Thread.sleep(1000);
-        dashboardPage.selectServicesTemplatesFromDropDownInFilters();
+        dashboardPage.selectACategoryFromDropDownInFilters();
         Thread.sleep(2000);
 
 

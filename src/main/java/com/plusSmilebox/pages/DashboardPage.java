@@ -40,8 +40,8 @@ public class DashboardPage {
     @FindBy(xpath="//div[@class=\"sb-vbar-float-wrapper\"]")
     public WebElement listDropDownOfAllCategories;
 
-    @FindBy (xpath="//li[@class='filter-subcategory']") //change to Services
-    public WebElement servicesFilerFromFilters;
+    @FindBy (xpath="//li[@class='filter-subcategory']")
+    public WebElement subcategoryFromFilters;
 
     @FindBy (xpath="//div[@class='btn-close' and text()='Halloween']")
     public WebElement buttonCloseFromMarketingWrapper;
@@ -69,11 +69,10 @@ public class DashboardPage {
         ChristmasTemplatesFromDropdownInBarHeader.click();
     }
 
-    public void selectServicesTemplatesFromDropDownInFilters() throws InterruptedException {
+    public void selectACategoryFromDropDownInFilters() throws InterruptedException {
         dropDownAllCategoriesInFilters.click();
         Assert.assertTrue(listDropDownOfAllCategories.isEnabled());
-        Thread.sleep(2000);
-        servicesFilerFromFilters.click();
+        subcategoryFromFilters.click();
 
     }
 }
