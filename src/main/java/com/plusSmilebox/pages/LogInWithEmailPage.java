@@ -37,7 +37,7 @@ public class LogInWithEmailPage {
     public void logInWithEmail(){
         driver.manage().deleteAllCookies();
         inputFieldEmail.sendKeys(Constants.EMAIL_FOR_REGISTRATION_VIA_FB);
-        inputFieldPassword.sendKeys(Constants.PASSWORD_FOR_REGISTRATION_VIA_FB);
+        inputFieldPassword.sendKeys(Constants.PASSWORD_CURRENT_USER);
 //        JavascriptExecutor js = (JavascriptExecutor)driver;
 //        js.executeScript("arguments[0].click();", buttonSubmit);
         buttonSubmit.click();

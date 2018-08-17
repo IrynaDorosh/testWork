@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class MainPage {
+public class DashboardPage {
 
     private WebDriver driver;
-    public MainPage(WebDriver driver){
+    public DashboardPage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver, this);
     }
@@ -27,11 +27,25 @@ public class MainPage {
     public WebElement ChristmasTemplates;
 
     @FindBy(xpath="//p[@class='sub-title']/span[@class='sub-name']")
-    public WebElement SubtitleNameAfterFiltering;
+    public WebElement subtitleNameAfterFiltering;
+
+    @FindBy (id="bar-pf-avatar")
+    public WebElement iconProfileDropdown;
+
+    @FindBy (id="signout")
+    public WebElement buttonLogOut;
+
 
     /**
      * METHODS
      */
+
+
+    public void logOutViaProvileDropdownOnDashboarPage(){
+      iconProfileDropdown.click();
+      buttonLogOut.click();
+      Assert.assertNotEquals( driver.getTitle(), "Smilebox Dashboard");
+    }
 
     public void selectChristmasTemplatesFromDropdown(){
         dropdownTemplates.click();

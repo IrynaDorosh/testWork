@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,17 @@
                     <div class="method-list-content passed suite-Default_Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="testSuite.FirstTestSet" hash-for-method="checkTemplatesChristmas">checkTemplatesChristmas</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="testSuite.FirstTestSet" hash-for-method="logInWithEmail">logInWithEmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_Suite" title="testSuite.FirstTestSet" hash-for-method="loginViaFacebook">loginViaFacebook</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_Suite -->
@@ -125,9 +135,23 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="checkTemplatesChristmas">
+                  </a> <!-- checkTemplatesChristmas -->
+                  <span class="method-name">checkTemplatesChristmas</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="logInWithEmail">
                   </a> <!-- logInWithEmail -->
                   <span class="method-name">logInWithEmail</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginViaFacebook">
+                  </a> <!-- loginViaFacebook -->
+                  <span class="method-name">loginViaFacebook</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -144,11 +168,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default Suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;testWork&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testSuite.FirstTestSet&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;logInWithEmail&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testSuite.FirstTestSet --&gt;
+      &lt;class name=&quot;testSuite.FirstTestSet&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- testWork --&gt;
 &lt;/suite&gt; &lt;!-- Default Suite --&gt;
@@ -188,16 +208,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'logInWithEmail')
+data.setCell(0, 1, 'loginViaFacebook')
 data.setCell(0, 2, 'testSuite.FirstTestSet')
-data.setCell(0, 3, 10791);
+data.setCell(0, 3, 17034);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'checkTemplatesChristmas')
+data.setCell(1, 2, 'testSuite.FirstTestSet')
+data.setCell(1, 3, 5625);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'logInWithEmail')
+data.setCell(2, 2, 'testSuite.FirstTestSet')
+data.setCell(2, 3, 4514);
 window.suiteTableData['Default_Suite']= { tableData: data, tableDiv: 'times-div-Default_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 27 seconds</span>
               <div id="times-div-Default_Suite">
               </div> <!-- times-div-Default_Suite -->
             </div> <!-- times-div -->
@@ -212,20 +240,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">testSuite.FirstTestSet</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">loginViaFacebook</span>
-                <br/>
-                <span class="ignored-method-name">checkTemplatesChristmas</span>
-                <br/>
-                <span class="ignored-method-name">loginViaFacebook2</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_Suite" class="panel">
@@ -240,12 +257,20 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <span class="method-name">loginViaFacebook</span>
+                <span class="method-start">99 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
                 <span class="method-name">logInWithEmail</span>
-                <span class="method-start">117 ms</span>
+                <span class="method-start">17135 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">checkTemplatesChristmas</span>
+                <span class="method-start">21650 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">10910 ms</span>
+                <span class="method-start">27276 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

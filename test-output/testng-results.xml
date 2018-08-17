@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default Suite" duration-ms="11819" started-at="2018-08-16T10:57:22Z" finished-at="2018-08-16T10:57:33Z">
+  <suite name="Default Suite" duration-ms="28205" started-at="2018-08-17T12:39:16Z" finished-at="2018-08-17T12:39:44Z">
     <groups>
     </groups>
-    <test name="testWork" duration-ms="11819" started-at="2018-08-16T10:57:22Z" finished-at="2018-08-16T10:57:33Z">
+    <test name="testWork" duration-ms="28205" started-at="2018-08-17T12:39:16Z" finished-at="2018-08-17T12:39:44Z">
       <class name="testSuite.FirstTestSet">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testSuite.FirstTestSet@1ebd319f]" name="beforeClass" is-config="true" duration-ms="104" started-at="2018-08-16T10:57:22Z" finished-at="2018-08-16T10:57:22Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testSuite.FirstTestSet@10d68fcd]" name="beforeClass" is-config="true" duration-ms="87" started-at="2018-08-17T12:39:16Z" finished-at="2018-08-17T12:39:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="logInWithEmail()[pri:1, instance:testSuite.FirstTestSet@1ebd319f]" name="logInWithEmail" duration-ms="10791" started-at="2018-08-16T10:57:22Z" finished-at="2018-08-16T10:57:32Z">
+        <test-method status="PASS" signature="loginViaFacebook()[pri:1, instance:testSuite.FirstTestSet@10d68fcd]" name="loginViaFacebook" duration-ms="17034" started-at="2018-08-17T12:39:16Z" finished-at="2018-08-17T12:39:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginViaFacebook -->
+        <test-method status="PASS" signature="logInWithEmail()[pri:2, instance:testSuite.FirstTestSet@10d68fcd]" name="logInWithEmail" duration-ms="4514" started-at="2018-08-17T12:39:33Z" finished-at="2018-08-17T12:39:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logInWithEmail -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:testSuite.FirstTestSet@1ebd319f]" name="afterClass" is-config="true" duration-ms="900" started-at="2018-08-16T10:57:32Z" finished-at="2018-08-16T10:57:33Z">
+        <test-method status="PASS" signature="checkTemplatesChristmas()[pri:3, instance:testSuite.FirstTestSet@10d68fcd]" name="checkTemplatesChristmas" duration-ms="5625" started-at="2018-08-17T12:39:38Z" finished-at="2018-08-17T12:39:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkTemplatesChristmas -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:testSuite.FirstTestSet@10d68fcd]" name="afterClass" is-config="true" duration-ms="917" started-at="2018-08-17T12:39:43Z" finished-at="2018-08-17T12:39:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
