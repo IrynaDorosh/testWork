@@ -6,4 +6,4 @@ screenShots/*.png
 libs/*.*
 target/*.*/
 test-output
-.idea/workspace.xml
+workspace.xml
