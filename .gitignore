@@ -1,7 +1,7 @@
 *.xml
 !testng.xml
 *.iml
-.idea
+/.idea
 screenShots/*.png
 libs/*.*
 target/*.*/
