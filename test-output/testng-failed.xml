@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default Suite]">
-  <test thread-count="5" name="SmileProject(failed)">
+  <test thread-count="5" name="testWork(failed)">
     <classes>
-      <class name="initialTestSuite.FirstTestSet">
+      <class name="testSuite.FirstTestSet">
         <methods>
           <include name="beforeClass"/>
-          <include name="a_loginViaFb"/>
+          <include name="checkAllCategoriesServices"/>
           <include name="afterClass"/>
         </methods>
-      </class> <!-- initialTestSuite.FirstTestSet -->
+      </class> <!-- testSuite.FirstTestSet -->
     </classes>
-  </test> <!-- SmileProject(failed) -->
+  </test> <!-- testWork(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->
