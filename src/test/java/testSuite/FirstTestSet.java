@@ -41,7 +41,7 @@ public class FirstTestSet extends BaseTest {
     @Test(priority = 2)
     public void logInWithEmail() throws InterruptedException {
         driver.get(Constants.LINK_START_PAGE);
-        startPage.linkLogIn.click();
+        startPage.linkLogInWithExistedAccount.click();
         logInWithEmailPage.logInWithEmail();
         Thread.sleep(2000);
         Assert.assertEquals(driver.getTitle(), "Smilebox Dashboard");
@@ -76,7 +76,7 @@ public class FirstTestSet extends BaseTest {
 
     private void logInEmail() throws InterruptedException {
         driver.get(Constants.LINK_START_PAGE);
-        startPage.linkLogIn.click();
+        startPage.linkLogInWithExistedAccount.click();
         logInWithEmailPage.logInWithEmail();
         Thread.sleep(2000);
         Assert.assertEquals(driver.getTitle(), "Smilebox Dashboard");

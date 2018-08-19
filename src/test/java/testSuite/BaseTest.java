@@ -8,7 +8,7 @@ import java.util.List;
 
 public class BaseTest {
     static {
-        System.setProperty("webdriver.chrome.driver", "D:\\AutoProjects\\AutoSmile\\testWork\\libs\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:\\Prog\\testWork\\testWork\\libs\\chromedriver.exe");
     }
 
     WebDriver driver = new ChromeDriver();
