@@ -5,10 +5,8 @@
     <test name="SMILE FIRST TESTS">
 
         <classes>
-            <class name="testSuites.LoginFunctionalitySuite" />
-
+            <class name="testSuites.SmileTestSuite" />
         </classes>
-
     </test>
 
 </suite>

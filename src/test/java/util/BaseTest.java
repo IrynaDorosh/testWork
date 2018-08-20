@@ -1,4 +1,4 @@
-package testSuites;
+package util;
 
 import com.plusSmilebox.pages.LogInWithEmailPage;
 import com.plusSmilebox.pages.StartPage;
@@ -16,7 +16,7 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver", "D:\\AutoProjects\\AutoSmile\\testWork\\libs\\chromedriver.exe");
     }
 
-    WebDriver driver = new ChromeDriver();
+    protected WebDriver driver = new ChromeDriver();
     private List<String> failedScreenshots = new ArrayList<>();
     private WebDriverWait wait8 = new WebDriverWait(driver, 8);;
     private StartPage startPage = new StartPage(driver);
