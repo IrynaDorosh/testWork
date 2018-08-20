@@ -3,6 +3,7 @@
 !testng.xml
 *.iml
 .idea
+.idea/*.xml
 screenShots/*.png
 libs/*.*
 target
