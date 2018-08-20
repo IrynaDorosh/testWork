@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+// https://plus.smilebox.com/Account/Welcome
 
 public class StartPage {
 
@@ -17,10 +18,10 @@ public class StartPage {
     public WebElement buttonLoginWithFB;
 
     @FindBy(xpath="//a[text()= 'Log in!']")
-    public WebElement linkLogIn;
+    public WebElement linkLogInWithExistedAccount;
 
     @FindBy(xpath="//a[text()= 'email']")
-    public WebElement linkEmail;
+    public WebElement linkSignUpWithEmail;
 
 
 
