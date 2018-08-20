@@ -1,13 +1,15 @@
 package testSuite;
-
 import com.plusSmilebox.pages.FBloginPage;
 import com.plusSmilebox.pages.LogInWithEmailPage;
 import com.plusSmilebox.pages.StartPage;
 import com.plusSmilebox.pages.DashboardPage;
 import com.plusSmilebox.util.Constants;
+import com.plusSmilebox.util.Helpers;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -18,6 +20,8 @@ public class FirstTestSet extends BaseTest {
     private FBloginPage fBloginPage;
     private DashboardPage dashboardPage;
     private LogInWithEmailPage logInWithEmailPage;
+    private WebDriverWait wait8;
+    private Helpers helpers;
 
     @BeforeClass
     public void beforeClass() {
@@ -27,10 +31,12 @@ public class FirstTestSet extends BaseTest {
         fBloginPage = new FBloginPage(driver);
         logInWithEmailPage = new LogInWithEmailPage(driver);
         dashboardPage = new DashboardPage(driver);
+        wait8 = new WebDriverWait(driver,8);
+        helpers = new Helpers(driver);
     }
 
     @Test(priority = 1)
-    public void loginViaFacebook() throws InterruptedException, IOException {
+    public void testUserCanLogInViaFacebookButton() {
         driver.get(Constants.LINK_START_PAGE);
         startPage.buttonLoginWithFB.click();
         fBloginPage.logInWithFBcredentials();
@@ -39,27 +45,30 @@ public class FirstTestSet extends BaseTest {
     }
 
     @Test(priority = 2)
-    public void logInWithEmail() throws InterruptedException {
+    public void testUserCanLogInViaLogInWithEmailButton () {
         driver.get(Constants.LINK_START_PAGE);
         startPage.linkLogIn.click();
         logInWithEmailPage.logInWithEmail();
-        Thread.sleep(2000);
         Assert.assertEquals(driver.getTitle(), "Smilebox Dashboard");
     }
 
     @Test(priority = 3)
-    public void checkTemplatesChristmas() throws InterruptedException {
-        driver.get(Constants.LINK_MAIN_PAGE);
-        dashboardPage.selectChristmasTemplatesFromDropdownInBarHeader();
+    public void testUserCanSelectTemplatesFromHeaderContainer_FirstAndLast () throws InterruptedException {
+        this.logInWithEmailFromStartPage(); //remove later
+        driver.get(Constants.LINK_MAIN_PAGE);  //to refresh Dashboard
+        Assert.assertFalse(helpers.isElementPresent(dashboardPage.subtitleNameAfterFiltering));
+        dashboardPage.clickOnTemplatesDropdownInBarHeader();
+        dashboardPage.selectChristmasTemplatesFromDropdown();
         Assert.assertEquals(dashboardPage.subtitleNameAfterFiltering.getText(), "Christmas");
-        Thread.sleep(2000);
+        dashboardPage.clickOnTemplatesDropdownInBarHeader();
+        dashboardPage.selectOtherBusinessTemplatesFromDropdown();
+        Assert.assertEquals(dashboardPage.subtitleNameAfterFiltering.getText(), "Other Business");
     }
-
-
-
+    
+@Ignore
     @Test(priority = 3)
     public void checkThatFilterWorksInAllCategories() throws InterruptedException {
-        logInEmail();
+        this.logInWithEmailFromStartPage(); //TODO move to helpers
         driver.manage().window().maximize();
         dashboardPage.buttonCloseFromMarketingWrapper.click();
         dashboardPage.selectACategoryFromDropDownInFilters();
@@ -74,12 +83,14 @@ public class FirstTestSet extends BaseTest {
         driver.quit();
     }
 
-    private void logInEmail() throws InterruptedException {
+    private void logInWithEmailFromStartPage() throws InterruptedException {
         driver.get(Constants.LINK_START_PAGE);
+        System.out.println("driver.get(Constants.LINK_START_PAGE)");
         startPage.linkLogIn.click();
+        System.out.println("startPage.linkLogIn.click();");
         logInWithEmailPage.logInWithEmail();
-        Thread.sleep(2000);
-        Assert.assertEquals(driver.getTitle(), "Smilebox Dashboard");
+        System.out.println("logInWithEmailPage.logInWithEmail();");
+        wait8.until(ExpectedConditions.titleContains("Smilebox Dashboard"));
     }
 }
 

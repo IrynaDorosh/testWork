@@ -1,9 +1,7 @@
 package com.plusSmilebox.util;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,9 +21,27 @@ public class Helpers {
         FileUtils.copyFile(screenshot, new File(path));
     }
 
+
+    public boolean isElementPresent(WebElement webElement) {
+        try {
+            webElement.isEnabled();
+            return true;
+        } catch (
+                NoSuchElementException e) {
+            return false;
+        }
+    }
+
+
+
+
+
     //TODO should return name of test suite
     private String folderName() {
         return "newFolder";
     }
+
+
+
 
 }
