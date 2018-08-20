@@ -13,6 +13,7 @@ public class DashboardPage {
     private WebDriver driver;
     private WebDriverWait wait8;
 
+
     public DashboardPage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver, this);
@@ -20,11 +21,14 @@ public class DashboardPage {
         wait8 = new WebDriverWait(driver,8);
     }
 
-    @FindBy(xpath="//div[@class='template-container-ie']")
+    @FindBy(xpath="//img[@src='/img/smilebox-logo-h-white.png']")
     public WebElement logoSmilebox;
 
     @FindBy(xpath="//span[text() = 'TEMPLATES']")
     public WebElement dropdownTemplatesFromDropdownInBarHeader;
+
+    @FindBy(xpath="//a[@href='/MyCreations' and text() = 'MY CREATIONS']")
+    public WebElement tabMyCreationsInBarheader;
 
     @FindBy(xpath="//div[@class = 'designs-list']")
     public WebElement listOfTemplatesFromDropdownInBarHeader;
@@ -56,6 +60,16 @@ public class DashboardPage {
     @FindBy (xpath="//div[@class='btn-close' and text()='Halloween']")
     public WebElement buttonCloseFromMarketingWrapper;
 
+     @FindBy (xpath = "//div[@class='img-container' and parent::div//p[@title='Join Us Floral']]")
+     public WebElement templateExampleJoimUsFloral;
+
+
+    @FindBy (xpath = "//button[@id='btn-personalize']")
+    public WebElement buttonPersonalise;
+
+
+
+
 
 
 
@@ -73,17 +87,12 @@ public class DashboardPage {
       Assert.assertNotEquals( driver.getTitle(), "Smilebox Dashboard");
     }
 
-//    public void selectChristmasTemplatesFromDropdownInBarHeader(){
-//        dropdownTemplatesFromDropdownInBarHeader.click();
-//        Assert.assertTrue(listOfTemplatesFromDropdownInBarHeader.isEnabled());//TODO experiment here
-//        templateChristmasFromDropdownInBarHeader.click();
-//    }
-
     public void clickOnTemplatesDropdownInBarHeader() {  //this method is separated to 2   selectChristmasTemplatesFromDropdownInBarHeader :click and select
         wait8.until(ExpectedConditions.visibilityOf(dropdownTemplatesFromDropdownInBarHeader));
         dropdownTemplatesFromDropdownInBarHeader.click();
     }
     public void selectChristmasTemplatesFromDropdown(){
+
         wait8.until(ExpectedConditions.visibilityOf(listOfTemplatesFromDropdownInBarHeader));
         Assert.assertTrue(listOfTemplatesFromDropdownInBarHeader.isEnabled());
         templateChristmasFromDropdownInBarHeader.click();

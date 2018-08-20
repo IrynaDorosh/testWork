@@ -1,7 +1,13 @@
 package com.plusSmilebox.util;
 
+import com.plusSmilebox.pages.DashboardPage;
+import com.plusSmilebox.pages.FBloginPage;
+import com.plusSmilebox.pages.LogInWithEmailPage;
+import com.plusSmilebox.pages.StartPage;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,20 +15,22 @@ import java.io.IOException;
 
 public class Helpers {
 
-    private WebDriver driver;
+    private static  WebDriver driver;
+    private static WebDriverWait wait8;
 
     public Helpers(WebDriver driver) {
         this.driver = driver;
-    }
+        wait8 = new WebDriverWait(driver, 8);
+           }
 
-    public void letsScreenshot() throws IOException {
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        String path = "./screenShots/" + folderName() + "/" + screenshot.getName();
-        FileUtils.copyFile(screenshot, new File(path));
-    }
+//    public void letsScreenshot() throws IOException {
+//        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//        String path = "./screenShots/" + folderName() + "/" + screenshot.getName();
+//        FileUtils.copyFile(screenshot, new File(path));
+//    }
 
 
-    public boolean isElementPresent(WebElement webElement) {
+    public static boolean isElementPresent(WebElement webElement) {
         try {
             webElement.isEnabled();
             return true;
@@ -32,16 +40,14 @@ public class Helpers {
         }
     }
 
+    public static void waitForElementToBePresent (WebElement webElement, String errorMessage){
+        try {
 
-
-
-
-    //TODO should return name of test suite
-    private String folderName() {
-        return "newFolder";
+            wait8.until(ExpectedConditions.visibilityOf(webElement));
+        } catch (TimeoutException e){
+            System.out.println(errorMessage);
+        }
     }
-
-
 
 
 }

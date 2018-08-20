@@ -5,7 +5,7 @@
     <test name="SMILE FIRST TESTS">
 
         <classes>
-            <class name="testSuite.FirstTestSet" />
+            <class name="testSuites.LoginFunctionalitySuite" />
 
         </classes>
 

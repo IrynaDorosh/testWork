@@ -5,6 +5,6 @@
 .idea
 screenShots/*.png
 libs/*.*
-target/*.*/
+target
 test-output
 workspace.xml
