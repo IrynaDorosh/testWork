@@ -34,9 +34,16 @@ public class BaseTest {
 
     public void logInWithEmailFromStartPage() {
         driver.get(Constants.LINK_START_PAGE);
+         wait8.withMessage("linkLogInWithExistedAccount is not visible")
+                .until(ExpectedConditions.visibilityOf(startPage.linkLogInWithExistedAccount));
         startPage.linkLogInWithExistedAccount.click();
+            wait8.withMessage("Login Page is not displayed")
+                .until(ExpectedConditions.titleContains("Login"));
         logInWithEmailPage.logInWithEmail();
-        wait8.until(ExpectedConditions.titleContains("Smilebox Dashboard"));
+            wait8.withMessage("Smilebox Dashboard page is not displayed")
+                .until(ExpectedConditions.titleContains("Smilebox Dashboard"));
     }
 
 }
+
+
