@@ -11,12 +11,14 @@ public class EditorPage {
 
     private WebDriver driver;
     private WebDriverWait wait8;
+    private WebDriverWait wait20;
 
 
     public EditorPage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver, this);
         wait8 = new WebDriverWait(driver,8);
+        wait20 = new WebDriverWait(driver,20);
     }
 
     @FindBy(xpath="//div[@id='inTxt1']/div")
@@ -42,7 +44,7 @@ public class EditorPage {
      */
 
     public void fillInFieldsInFloralTemplate() {
-        wait8.withMessage("Text block in Edior page is not visible")
+        wait20.withMessage("Text block in Edior page is not visible")
                 .until(ExpectedConditions.visibilityOf(this.textBlock1InFloralTemplate));
         textBlock1InFloralTemplate.clear();
         textBlock1InFloralTemplate.sendKeys("FOR ALL MY FRIENDS");

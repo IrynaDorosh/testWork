@@ -3,7 +3,10 @@ package util;
 import com.plusSmilebox.pages.LogInWithEmailPage;
 import com.plusSmilebox.pages.StartPage;
 import com.plusSmilebox.util.Constants;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -32,7 +35,7 @@ public class BaseTest {
         return failedScreenshots;
     }
 
-    public void logInWithEmailFromStartPage() {
+    protected void logInWithEmailFromStartPage() {
         driver.get(Constants.LINK_START_PAGE);
          wait8.withMessage("linkLogInWithExistedAccount is not visible")
                 .until(ExpectedConditions.visibilityOf(startPage.linkLogInWithExistedAccount));
@@ -43,6 +46,35 @@ public class BaseTest {
             wait8.withMessage("Smilebox Dashboard page is not displayed")
                 .until(ExpectedConditions.titleContains("Smilebox Dashboard"));
     }
+
+    protected void waitForPageTitleToDIsplayed (String title, String errorMessage ) {
+        try {
+            wait8.until(ExpectedConditions.titleContains(title));
+        } catch (TimeoutException e) {
+            System.out.println(errorMessage);
+        }
+    }
+
+    protected void waitForElementIsDisplayed (WebElement element, String errorMessage ){
+        try{
+            wait8.until(ExpectedConditions.visibilityOf(element));
+        } catch (TimeoutException e) {
+            System.out.println(errorMessage);
+        }
+    }
+
+    public static boolean isElementPresent(WebElement webElement) {
+        try {
+            webElement.isEnabled();
+            return true;
+        } catch (
+                NoSuchElementException e) {
+            return false;
+        }
+    }
+
+
+
 
 }
 

@@ -24,15 +24,6 @@ public class Helpers {
            }
 
 
-    public static boolean isElementPresent(WebElement webElement) {
-        try {
-            webElement.isEnabled();
-            return true;
-        } catch (
-                NoSuchElementException e) {
-            return false;
-        }
-    }
 
     public static void waitForElementToBePresent (WebElement webElement, String errorMessage){
         try {
@@ -41,14 +32,6 @@ public class Helpers {
             System.out.println(errorMessage);
         }
     }
-    public static void waitForPageTitleToDIsplayed (String title, String errorMessage ) {
-        try {
-            wait8.until(ExpectedConditions.titleContains(title));
-        } catch (TimeoutException e){
-            System.out.println(errorMessage);
-        }
-    }
-
 
 
 

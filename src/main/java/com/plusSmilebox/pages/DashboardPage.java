@@ -72,10 +72,6 @@ public class DashboardPage {
 
 
 
-
-
-
-
     /**
      * METHODS
      */
@@ -103,11 +99,6 @@ public class DashboardPage {
         wait8.until(ExpectedConditions.visibilityOf(listOfTemplatesFromDropdownInBarHeader));
         templateOtherBusinessFromDropdownInBarHeader.click();
     }
-
-
-
-
-
 
 
 

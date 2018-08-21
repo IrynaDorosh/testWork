@@ -20,17 +20,20 @@ public class SmileTestSuite extends BaseTest {
     private LogInWithEmailPage logInWithEmailPage;
     private WebDriverWait wait8;
     private EditorPage editorPage;
+    private MyCreationsPage myCreationsPage;
 
     @BeforeClass
     public void beforeClass() {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
         startPage = new StartPage(driver);
         fBloginPage = new FBloginPage(driver);
         logInWithEmailPage = new LogInWithEmailPage(driver);
         dashboardPage = new DashboardPage(driver);
         wait8 = new WebDriverWait(driver, 8);
         editorPage = new EditorPage(driver);
+        myCreationsPage= new MyCreationsPage(driver);
     }
 
     @Test(priority = 1)
@@ -60,12 +63,11 @@ public class SmileTestSuite extends BaseTest {
 
     @Test(priority = 3)
     public void testUserCanSelectTemplatesFromHeaderContainer_FirstAndLast ()  {
-        //super.logInWithEmailFromStartPage(); //TODO remove later
+        //super.logInWithEmailFromStartPage(); //remove later
         driver.get(Constants.LINK_MAIN_PAGE);  //to refresh Dashboard
         driver.manage().window().maximize();
-        wait8.withMessage("Smilebox Dashboard page is not displayed")
-                .until(ExpectedConditions.titleContains("Smilebox Dashboard"));
-        Assert.assertFalse(Helpers.isElementPresent(dashboardPage.subtitleNameAfterFiltering)); //to ensure that no templates are selected
+            waitForPageTitleToDIsplayed("Smilebox Dashboard", "Smilebox Dashboard page is not displayed");
+        Assert.assertFalse(isElementPresent(dashboardPage.subtitleNameAfterFiltering)); //to ensure that no templates are selected
         dashboardPage.clickOnTemplatesDropdownInBarHeader();
         dashboardPage.selectChristmasTemplatesFromDropdown();
         Assert.assertEquals(dashboardPage.subtitleNameAfterFiltering.getText(), "Christmas");
@@ -78,43 +80,39 @@ public class SmileTestSuite extends BaseTest {
     public void testCheckThatCreationListDisplayedAfterClickingOnMyCreationsTab () throws InterruptedException {
         super.logInWithEmailFromStartPage(); //remove later
         dashboardPage.tabMyCreationsInBarheader.click();
-            wait8.withMessage("My Creations title is not displayed")
-                .until(ExpectedConditions.titleContains("My Creations"));
-        //Assert empty
+            waitForPageTitleToDIsplayed("My Creations", "My Creations title is not displayed");
+        Assert.assertEquals(myCreationsPage.containerForCreations.getText(), "What are you waiting for? Create an awesome slideshow now!"); //verify that empty
+        Assert.assertFalse(isElementPresent(myCreationsPage.creationList));
         dashboardPage.logoSmilebox.click();
-            wait8.withMessage("Smilebox Dashboard page is not displayed")
-                .until(ExpectedConditions.titleContains("Smilebox Dashboard"));
+            waitForPageTitleToDIsplayed("Smilebox Dashboard", "Smilebox Dashboard page is not displayed");
         dashboardPage.templateExampleJoimUsFloral.click();
-            wait8.withMessage("Personalise button is not displayed")
-                .until(ExpectedConditions.visibilityOf(dashboardPage.buttonPersonalise));
+            waitForElementIsDisplayed(dashboardPage.buttonPersonalise,"Personalise button is not displayed");
         dashboardPage.buttonPersonalise.click();
-            wait8.withMessage("Smilebox Plus Editor Page is not displayed")
-                    .until(ExpectedConditions.titleContains("Smilebox Plus Editor"));
+            waitForPageTitleToDIsplayed("Smilebox Dashboard", "Smilebox Dashboard page is not displayed");
         editorPage.fillInFieldsInFloralTemplate();
         editorPage.savingModifiedTemplate();
-            wait8.withMessage("Not redirected to Editor page after Save +Save")
-                .until(ExpectedConditions.visibilityOf(editorPage.buttonPreviewAndShare));
-        driver.get("https://plus.smilebox.com/MyCreations");
-        //delete edited template
-        Thread.sleep(3000);
+            waitForElementIsDisplayed(editorPage.buttonPreviewAndShare, "Not redirected to Editor page after Save +Save");
+        driver.get(Constants.LINK_MY_CREATIONS_PAGE);
+        Assert.assertTrue(isElementPresent(myCreationsPage.creationList));
+        //implement functionality delete edited template
+        Thread.sleep(2000);
     }
-
 
     @Ignore
     @Test(priority = 3)
     public void checkThatFilterWorksInAllCategories() throws InterruptedException {
-        //super.logInWithEmailFromStartPage(); //TODO move to helpers
-        driver.manage().window().maximize();
+        //super.logInWithEmailFromStartPage();
+
         dashboardPage.buttonCloseFromMarketingWrapper.click();
         dashboardPage.selectACategoryFromDropDownInFilters();
         Thread.sleep(2000);
     }
 
+
     @AfterClass
     public void afterClass() {
         driver.quit();
     }
-
 
 }
 
