@@ -60,9 +60,12 @@ public class SmileTestSuite extends BaseTest {
 
     @Test(priority = 3)
     public void testUserCanSelectTemplatesFromHeaderContainer_FirstAndLast ()  {
-        //super.logInWithEmailFromStartPage(); //remove later
+        //super.logInWithEmailFromStartPage(); //TODO remove later
         driver.get(Constants.LINK_MAIN_PAGE);  //to refresh Dashboard
-        Assert.assertFalse(Helpers.isElementPresent(dashboardPage.subtitleNameAfterFiltering));
+        driver.manage().window().maximize();
+        wait8.withMessage("Smilebox Dashboard page is not displayed")
+                .until(ExpectedConditions.titleContains("Smilebox Dashboard"));
+        Assert.assertFalse(Helpers.isElementPresent(dashboardPage.subtitleNameAfterFiltering)); //to ensure that no templates are selected
         dashboardPage.clickOnTemplatesDropdownInBarHeader();
         dashboardPage.selectChristmasTemplatesFromDropdown();
         Assert.assertEquals(dashboardPage.subtitleNameAfterFiltering.getText(), "Christmas");
@@ -71,27 +74,28 @@ public class SmileTestSuite extends BaseTest {
         Assert.assertEquals(dashboardPage.subtitleNameAfterFiltering.getText(), "Other Business");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 4)
     public void testCheckThatCreationListDisplayedAfterClickingOnMyCreationsTab () throws InterruptedException {
-        //super.logInWithEmailFromStartPage(); //remove later
+        super.logInWithEmailFromStartPage(); //remove later
         dashboardPage.tabMyCreationsInBarheader.click();
-        wait8.withMessage("My Creations title is not displayed").until(ExpectedConditions.titleContains("My Creations"));
+            wait8.withMessage("My Creations title is not displayed")
+                .until(ExpectedConditions.titleContains("My Creations"));
         //Assert empty
         dashboardPage.logoSmilebox.click();
-        wait8.until(ExpectedConditions.titleContains("Smilebox Dashboard"));
+            wait8.withMessage("Smilebox Dashboard page is not displayed")
+                .until(ExpectedConditions.titleContains("Smilebox Dashboard"));
         dashboardPage.templateExampleJoimUsFloral.click();
-        Helpers.waitForElementToBePresent(dashboardPage.buttonPersonalise, "Personalise button is not displayed");
+            wait8.withMessage("Personalise button is not displayed")
+                .until(ExpectedConditions.visibilityOf(dashboardPage.buttonPersonalise));
         dashboardPage.buttonPersonalise.click();
-        wait8.withMessage("Smilebox Plus Editor Page is not displayed").until(ExpectedConditions.titleContains("Smilebox Plus Editor"));
-        Helpers.waitForElementToBePresent(editorPage.textBlock1InFloralTemplate, "Text block in Edior page is not visible");
-        editorPage.textBlock1InFloralTemplate.clear();
-        editorPage.textBlock1InFloralTemplate.sendKeys("FOR ALL MY FRIENDS");
-        editorPage.textBlock1InFloralTemplate.clear();
-        editorPage.textBlock1InFloralTemplate.sendKeys("YOU ARE INVITED TO THE BEST PARTY EVER");
-        editorPage.buttonSave1OnEditor.click();
-        editorPage.buttonSave2OnEditor.click();
-        Helpers.waitForElementToBePresent(editorPage.buttonPreviewAndShare, "Not redirected to Editor page after Save +Save");
+            wait8.withMessage("Smilebox Plus Editor Page is not displayed")
+                    .until(ExpectedConditions.titleContains("Smilebox Plus Editor"));
+        editorPage.fillInFieldsInFloralTemplate();
+        editorPage.savingModifiedTemplate();
+            wait8.withMessage("Not redirected to Editor page after Save +Save")
+                .until(ExpectedConditions.visibilityOf(editorPage.buttonPreviewAndShare));
         driver.get("https://plus.smilebox.com/MyCreations");
+        //delete edited template
         Thread.sleep(3000);
     }
 
