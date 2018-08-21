@@ -10,15 +10,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class EditorPage {
 
     private WebDriver driver;
-    private WebDriverWait wait8;
-    private WebDriverWait wait20;
+    private WebDriverWait wait10;
+    private WebDriverWait wait30;
 
 
     public EditorPage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver, this);
-        wait8 = new WebDriverWait(driver,8);
-        wait20 = new WebDriverWait(driver,20);
+        wait10 = new WebDriverWait(driver,10);
+        wait30 = new WebDriverWait(driver,30);
     }
 
     @FindBy(xpath="//div[@id='inTxt1']/div")
@@ -44,7 +44,7 @@ public class EditorPage {
      */
 
     public void fillInFieldsInFloralTemplate() {
-        wait20.withMessage("Text block in Edior page is not visible")
+        wait30.withMessage("Text block in Edior page is not visible")
                 .until(ExpectedConditions.visibilityOf(this.textBlock1InFloralTemplate));
         textBlock1InFloralTemplate.clear();
         textBlock1InFloralTemplate.sendKeys("FOR ALL MY FRIENDS");

@@ -1,7 +1,6 @@
 package testSuites;
 import com.plusSmilebox.pages.*;
 import com.plusSmilebox.util.Constants;
-import com.plusSmilebox.util.Helpers;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -18,7 +17,7 @@ public class SmileTestSuite extends BaseTest {
     private FBloginPage fBloginPage;
     private DashboardPage dashboardPage;
     private LogInWithEmailPage logInWithEmailPage;
-    private WebDriverWait wait8;
+    private WebDriverWait wait10;
     private EditorPage editorPage;
     private MyCreationsPage myCreationsPage;
 
@@ -31,7 +30,7 @@ public class SmileTestSuite extends BaseTest {
         fBloginPage = new FBloginPage(driver);
         logInWithEmailPage = new LogInWithEmailPage(driver);
         dashboardPage = new DashboardPage(driver);
-        wait8 = new WebDriverWait(driver, 8);
+        wait10 = new WebDriverWait(driver, 10);
         editorPage = new EditorPage(driver);
         myCreationsPage= new MyCreationsPage(driver);
     }
@@ -40,10 +39,10 @@ public class SmileTestSuite extends BaseTest {
     public void testUserCanLogInViaFacebookButton() {
         driver.get(Constants.LINK_START_PAGE);
         startPage.clickButtonLoginWithFB();
-            wait8.withMessage("Facebook page is not displayed")
+            wait10.withMessage("Facebook page is not displayed")
                     .until(ExpectedConditions.titleContains("Facebook"));
         fBloginPage.logInWithFBcredentials();
-        wait8.withMessage("Smilebox Dashboard page is not displayed")
+        wait10.withMessage("Smilebox Dashboard page is not displayed")
                 .until(ExpectedConditions.titleContains("Smilebox Dashboard"));
         Assert.assertEquals("Smilebox Dashboard", driver.getTitle());
         dashboardPage.logOutViaProvileDropdownOnDashboarPage();
@@ -53,10 +52,10 @@ public class SmileTestSuite extends BaseTest {
     public void testUserCanLogInViaLogInWithEmailButton () {
         driver.get(Constants.LINK_START_PAGE);
         startPage.clicklinkLogInWithExistedAccount();
-        wait8.withMessage("Login page is not displayed")
+        wait10.withMessage("Login page is not displayed")
                 .until(ExpectedConditions.titleContains("Login"));
         logInWithEmailPage.logInWithEmail();
-        wait8.withMessage("Smilebox Dashboard page is not displayed")
+        wait10.withMessage("Smilebox Dashboard page is not displayed")
                 .until(ExpectedConditions.titleContains("Smilebox Dashboard"));
         Assert.assertEquals(driver.getTitle(), "Smilebox Dashboard");
     }
@@ -81,7 +80,8 @@ public class SmileTestSuite extends BaseTest {
         super.logInWithEmailFromStartPage(); //remove later
         dashboardPage.tabMyCreationsInBarheader.click();
             waitForPageTitleToDIsplayed("My Creations", "My Creations title is not displayed");
-        Assert.assertEquals(myCreationsPage.containerForCreations.getText(), "What are you waiting for? Create an awesome slideshow now!"); //verify that empty
+        Assert.assertTrue(isElementPresent(myCreationsPage.containerForCreations), "Element containerForCreations not present");
+            Assert.assertEquals(myCreationsPage.containerForCreations.getText(), "What are you waiting for? Create an awesome slideshow now!"); //verify that empty
         Assert.assertFalse(isElementPresent(myCreationsPage.creationList));
         dashboardPage.logoSmilebox.click();
             waitForPageTitleToDIsplayed("Smilebox Dashboard", "Smilebox Dashboard page is not displayed");
@@ -97,9 +97,16 @@ public class SmileTestSuite extends BaseTest {
         //implement functionality delete edited template
         Thread.sleep(2000);
     }
+    @Ignore
+    @Test(priority = 5)
+    public void testShouldFail() {
+        driver.get(Constants.LINK_START_PAGE);
+        Assert.assertEquals(driver.getTitle(), "SSSmile","Title SSSmile is not displayed");
+
+    }
 
     @Ignore
-    @Test(priority = 3)
+    @Test
     public void checkThatFilterWorksInAllCategories() throws InterruptedException {
         //super.logInWithEmailFromStartPage();
 

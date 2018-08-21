@@ -13,12 +13,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LogInWithEmailPage {
 
     private WebDriver driver;
-    WebDriverWait wait8;
+    WebDriverWait wait10;
 
     public LogInWithEmailPage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver, this);
-        wait8 = new WebDriverWait(driver, 8);
+        wait10 = new WebDriverWait(driver, 10);
     }
 
     @FindBy(xpath="//input[@id='Email']")
@@ -40,7 +40,7 @@ public class LogInWithEmailPage {
 
     public void logInWithEmail(){
         driver.manage().deleteAllCookies();
-        wait8.withMessage("inputFieldEmail is not present")
+        wait10.withMessage("inputFieldEmail is not present")
                 .until(ExpectedConditions.visibilityOf(inputFieldEmail));
         inputFieldEmail.sendKeys(Constants.EMAIL_FOR_REGISTRATION_VIA_FB);
         inputFieldPassword.sendKeys(Constants.PASSWORD_CURRENT_USER);

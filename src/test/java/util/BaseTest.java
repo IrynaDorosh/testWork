@@ -21,7 +21,7 @@ public class BaseTest {
 
     protected WebDriver driver = new ChromeDriver();
     private List<String> failedScreenshots = new ArrayList<>();
-    private WebDriverWait wait8 = new WebDriverWait(driver, 8);;
+    private WebDriverWait wait10 = new WebDriverWait(driver, 10);
     private StartPage startPage = new StartPage(driver);
     private LogInWithEmailPage logInWithEmailPage = new LogInWithEmailPage(driver);
 
@@ -37,19 +37,19 @@ public class BaseTest {
 
     protected void logInWithEmailFromStartPage() {
         driver.get(Constants.LINK_START_PAGE);
-         wait8.withMessage("linkLogInWithExistedAccount is not visible")
+         wait10.withMessage("linkLogInWithExistedAccount is not visible")
                 .until(ExpectedConditions.visibilityOf(startPage.linkLogInWithExistedAccount));
         startPage.linkLogInWithExistedAccount.click();
-            wait8.withMessage("Login Page is not displayed")
+            wait10.withMessage("Login Page is not displayed")
                 .until(ExpectedConditions.titleContains("Login"));
         logInWithEmailPage.logInWithEmail();
-            wait8.withMessage("Smilebox Dashboard page is not displayed")
+            wait10.withMessage("Smilebox Dashboard page is not displayed")
                 .until(ExpectedConditions.titleContains("Smilebox Dashboard"));
     }
 
     protected void waitForPageTitleToDIsplayed (String title, String errorMessage ) {
         try {
-            wait8.until(ExpectedConditions.titleContains(title));
+            wait10.until(ExpectedConditions.titleContains(title));
         } catch (TimeoutException e) {
             System.out.println(errorMessage);
         }
@@ -57,7 +57,7 @@ public class BaseTest {
 
     protected void waitForElementIsDisplayed (WebElement element, String errorMessage ){
         try{
-            wait8.until(ExpectedConditions.visibilityOf(element));
+            wait10.until(ExpectedConditions.visibilityOf(element));
         } catch (TimeoutException e) {
             System.out.println(errorMessage);
         }
