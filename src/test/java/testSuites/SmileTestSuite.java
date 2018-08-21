@@ -24,7 +24,7 @@ public class SmileTestSuite extends BaseTest {
     @BeforeClass
     public void beforeClass() {
 
-        getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         startPage = new StartPage(driver);
         fBloginPage = new FBloginPage(driver);
         logInWithEmailPage = new LogInWithEmailPage(driver);
@@ -36,8 +36,12 @@ public class SmileTestSuite extends BaseTest {
     @Test(priority = 1)
     public void testUserCanLogInViaFacebookButton() {
         driver.get(Constants.LINK_START_PAGE);
-        startPage.buttonLoginWithFB.click();
+        startPage.clickButtonLoginWithFB();
+            wait8.withMessage("Facebook page is not displayed")
+                    .until(ExpectedConditions.titleContains("Facebook"));
         fBloginPage.logInWithFBcredentials();
+        wait8.withMessage("Smilebox Dashboard page is not displayed")
+                .until(ExpectedConditions.titleContains("Smilebox Dashboard"));
         Assert.assertEquals("Smilebox Dashboard", driver.getTitle());
         dashboardPage.logOutViaProvileDropdownOnDashboarPage();
     }

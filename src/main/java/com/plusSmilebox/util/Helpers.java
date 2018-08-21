@@ -23,12 +23,6 @@ public class Helpers {
         wait8 = new WebDriverWait(driver, 8);
            }
 
-//    public void letsScreenshot() throws IOException {
-//        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-//        String path = "./screenShots/" + folderName() + "/" + screenshot.getName();
-//        FileUtils.copyFile(screenshot, new File(path));
-//    }
-
 
     public static boolean isElementPresent(WebElement webElement) {
         try {
@@ -42,12 +36,21 @@ public class Helpers {
 
     public static void waitForElementToBePresent (WebElement webElement, String errorMessage){
         try {
-
             wait8.until(ExpectedConditions.visibilityOf(webElement));
         } catch (TimeoutException e){
             System.out.println(errorMessage);
         }
     }
+    public static void waitForPageTitleToDIsplayed (String title, String errorMessage ) {
+        try {
+            wait8.until(ExpectedConditions.titleContains(title));
+        } catch (TimeoutException e){
+            System.out.println(errorMessage);
+        }
+    }
+
+
+
 
 
 }

@@ -1,5 +1,6 @@
 package com.plusSmilebox.pages;
 
+import com.plusSmilebox.util.Helpers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,7 +18,6 @@ public class DashboardPage {
     public DashboardPage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver, this);
-
         wait8 = new WebDriverWait(driver,8);
     }
 
@@ -43,7 +43,7 @@ public class DashboardPage {
     @FindBy(xpath="//p[@class='sub-title']/span[@class='sub-name']")
     public WebElement subtitleNameAfterFiltering;
 
-    @FindBy (id="bar-pf-avatar")
+    @FindBy (xpath = "//div[@id='bar-pf-avatar']")
     public WebElement iconProfileDropdown;
     @FindBy (id="signout")
     public WebElement buttonLogOut;
@@ -82,9 +82,11 @@ public class DashboardPage {
 
 
     public void logOutViaProvileDropdownOnDashboarPage(){
+        wait8.withMessage("iconProfileDropdown is not present")
+                .until(ExpectedConditions.visibilityOf(iconProfileDropdown));
       iconProfileDropdown.click();
       buttonLogOut.click();
-      Assert.assertNotEquals( driver.getTitle(), "Smilebox Dashboard");
+      Assert.assertNotEquals(driver.getTitle(), "Smilebox Dashboard");  //TODO wait for title to be absent
     }
 
     public void clickOnTemplatesDropdownInBarHeader() {  //this method is separated to 2   selectChristmasTemplatesFromDropdownInBarHeader :click and select
