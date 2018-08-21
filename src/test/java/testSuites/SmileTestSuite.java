@@ -49,9 +49,12 @@ public class SmileTestSuite extends BaseTest {
     @Test(priority = 2)
     public void testUserCanLogInViaLogInWithEmailButton () {
         driver.get(Constants.LINK_START_PAGE);
-        startPage.linkLogInWithExistedAccount.click();
+        startPage.clicklinkLogInWithExistedAccount();
+        wait8.withMessage("Login page is not displayed")
+                .until(ExpectedConditions.titleContains("Login"));
         logInWithEmailPage.logInWithEmail();
-        //add Wait
+        wait8.withMessage("Smilebox Dashboard page is not displayed")
+                .until(ExpectedConditions.titleContains("Smilebox Dashboard"));
         Assert.assertEquals(driver.getTitle(), "Smilebox Dashboard");
     }
 

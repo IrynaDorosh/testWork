@@ -38,6 +38,12 @@ public class StartPage {
         buttonLoginWithFB.click();
     }
 
+    public void clicklinkLogInWithExistedAccount() {
+        wait8.withMessage("linkLogInWithExistedAccount is not visible")
+                .until(ExpectedConditions.visibilityOf(linkLogInWithExistedAccount));
+        linkLogInWithExistedAccount.click();
+    }
+
 
     /**
      * METHODS
