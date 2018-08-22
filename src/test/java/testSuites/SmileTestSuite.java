@@ -1,6 +1,7 @@
 package testSuites;
 import com.plusSmilebox.pages.*;
 import com.plusSmilebox.util.Constants;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -20,6 +21,13 @@ public class SmileTestSuite extends BaseTest {
     private WebDriverWait wait10;
     private EditorPage editorPage;
     private MyCreationsPage myCreationsPage;
+    private final static Logger logger = Logger.getLogger(SmileTestSuite.class);
+    private RegisterPage registerPage;
+
+    @Override
+    public Logger getLogger() {
+        return logger;
+    }
 
     @BeforeClass
     public void beforeClass() {
@@ -33,7 +41,10 @@ public class SmileTestSuite extends BaseTest {
         wait10 = new WebDriverWait(driver, 10);
         editorPage = new EditorPage(driver);
         myCreationsPage= new MyCreationsPage(driver);
+        registerPage = new RegisterPage(driver);
+
     }
+
 
     @Test(priority = 1)
     public void testUserCanLogInViaFacebookButton() {
@@ -61,12 +72,11 @@ public class SmileTestSuite extends BaseTest {
     }
 
     @Test(priority = 3)
-    public void testUserCanSelectTemplatesFromHeaderContainer_FirstAndLast ()  {
+    public void testUserCanSelectTemplatesFromHeaderContainer_FirstAndLast() {
         //super.logInWithEmailFromStartPage(); //remove later
         driver.get(Constants.LINK_MAIN_PAGE);  //to refresh Dashboard
-        driver.manage().window().maximize();
-            waitForPageTitleToDIsplayed("Smilebox Dashboard", "Smilebox Dashboard page is not displayed");
-        Assert.assertFalse(isElementPresent(dashboardPage.subtitleNameAfterFiltering)); //to ensure that no templates are selected
+        waitForPageTitleToDisplayed("Smilebox Dashboard", "Smilebox Dashboard page is not displayed");
+//        Assert.assertFalse(isElementDisplayed(dashboardPage.subtitleNameAfterFiltering)); //to ensure that no templates are selected
         dashboardPage.clickOnTemplatesDropdownInBarHeader();
         dashboardPage.selectChristmasTemplatesFromDropdown();
         Assert.assertEquals(dashboardPage.subtitleNameAfterFiltering.getText(), "Christmas");
@@ -76,33 +86,32 @@ public class SmileTestSuite extends BaseTest {
     }
 
     @Test(priority = 4)
-    public void testCheckThatCreationListDisplayedAfterClickingOnMyCreationsTab () throws InterruptedException {
-        super.logInWithEmailFromStartPage(); //remove later
+    public void testCheckThatCreationListDisplayedAfterClickingOnMyCreationsTab() throws InterruptedException {
+        //super.logInWithEmailFromStartPage(); //remove later
+        driver.get(Constants.LINK_MAIN_PAGE);  //to refresh Dashboard
         dashboardPage.tabMyCreationsInBarheader.click();
-            waitForPageTitleToDIsplayed("My Creations", "My Creations title is not displayed");
-        Assert.assertTrue(isElementPresent(myCreationsPage.containerForCreations), "Element containerForCreations not present");
-            Assert.assertEquals(myCreationsPage.containerForCreations.getText(), "What are you waiting for? Create an awesome slideshow now!"); //verify that empty
-        Assert.assertFalse(isElementPresent(myCreationsPage.creationList));
+        waitForPageTitleToDisplayed("My Creations", "My Creations title is not displayed");
+        Assert.assertTrue(isElementDisplayed(myCreationsPage.containerForCreations), "Element containerForCreations not present");
+        Assert.assertEquals(myCreationsPage.containerForCreations.getText(), "What are you waiting for? Create an awesome slideshow now!"); //verify that empty
+        //Assert.assertFalse(isElementDisplayed(myCreationsPage.creationList)); //verify if Element Present
         dashboardPage.logoSmilebox.click();
-            waitForPageTitleToDIsplayed("Smilebox Dashboard", "Smilebox Dashboard page is not displayed");
+        waitForPageTitleToDisplayed("Smilebox Dashboard", "Smilebox Dashboard page is not displayed");
         dashboardPage.templateExampleJoimUsFloral.click();
-            waitForElementIsDisplayed(dashboardPage.buttonPersonalise,"Personalise button is not displayed");
+        waitForElementIsDisplayed(dashboardPage.buttonPersonalise, "Personalise button is not displayed");
         dashboardPage.buttonPersonalise.click();
-            waitForPageTitleToDIsplayed("Smilebox Dashboard", "Smilebox Dashboard page is not displayed");
+        waitForPageTitleToDisplayed("Smilebox Dashboard", "Smilebox Dashboard page is not displayed");
         editorPage.fillInFieldsInFloralTemplate();
         editorPage.savingModifiedTemplate();
-            waitForElementIsDisplayed(editorPage.buttonPreviewAndShare, "Not redirected to Editor page after Save +Save");
+        waitForElementIsDisplayed(editorPage.buttonPreviewAndShare, "Not redirected to Editor page after Save +Save");
         driver.get(Constants.LINK_MY_CREATIONS_PAGE);
-        Assert.assertTrue(isElementPresent(myCreationsPage.creationList));
+        Assert.assertTrue(isElementDisplayed(myCreationsPage.creationList));
         //implement functionality delete edited template
         Thread.sleep(2000);
     }
-    @Ignore
     @Test(priority = 5)
     public void testShouldFail() {
         driver.get(Constants.LINK_START_PAGE);
         Assert.assertEquals(driver.getTitle(), "SSSmile","Title SSSmile is not displayed");
-
     }
 
     @Ignore

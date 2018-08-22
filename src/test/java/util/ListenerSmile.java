@@ -1,6 +1,7 @@
 package util;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -15,24 +16,27 @@ import java.util.Date;
 
 public class ListenerSmile implements ITestListener {
 
-    private String filePath = "./screenShots/";
-
+    @Override
     public void onTestStart(ITestResult iTestResult) {
+        Logger logger = ((BaseTest) iTestResult.getInstance()).getLogger();
+        logger.debug("*** " + iTestResult.getMethod().getMethodName() + " started ***");
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        System.out.println("The name of the testcase succedeed is :" + iTestResult.getName());
+//        System.out.println("The name of the testcase succedeed is :" + iTestResult.getName());
+        Logger logger = ((BaseTest) iTestResult.getInstance()).getLogger();
+        logger.debug(iTestResult.getMethod().getMethodName() + " finished successfully");
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        System.out.println("************Error: " + iTestResult.getName() + " test has failed ***************");
-        String methodName = iTestResult.getName().trim();
+        Logger logger = ((BaseTest) iTestResult.getInstance()).getLogger();
+        logger.debug(iTestResult.getMethod().getMethodName() + " FAILED");
 
+        String methodName = iTestResult.getName().trim();
         Object currentTestClass = iTestResult.getInstance();
         WebDriver webDriver = ((BaseTest) currentTestClass).getDriver();
-
         takeScreenShot(webDriver, methodName);
     }
 
@@ -59,6 +63,7 @@ public class ListenerSmile implements ITestListener {
             File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             //The below method will save the screen shot in d drive with test method name
             try {
+                String filePath = "./screenShots/";
                 String fullPath = filePath + methodName + "-" + formattedDate + ".png";
                 FileUtils.copyFile(scrFile, new File(fullPath));
                 System.out.println("***Placed screen shot in " + filePath + " ***");

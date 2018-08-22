@@ -90,7 +90,6 @@ public class DashboardPage {
         dropdownTemplatesFromDropdownInBarHeader.click();
     }
     public void selectChristmasTemplatesFromDropdown(){
-
         wait8.until(ExpectedConditions.visibilityOf(listOfTemplatesFromDropdownInBarHeader));
         Assert.assertTrue(listOfTemplatesFromDropdownInBarHeader.isEnabled());
         templateChristmasFromDropdownInBarHeader.click();
