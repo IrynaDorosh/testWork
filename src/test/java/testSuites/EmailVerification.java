@@ -1,16 +1,13 @@
 package testSuites;
-
-import com.plusSmilebox.pages.RegisterPage;
-import com.plusSmilebox.pages.StartPage;
+import com.plusSmilebox.pages.initialPages.RegisterPage;
+import com.plusSmilebox.pages.initialPages.StartPage;
 import com.plusSmilebox.util.FileUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
 import java.util.List;
-
 import static com.plusSmilebox.util.Constants.PROJECT_ROOT;
 
 public class EmailVerification {
@@ -33,8 +30,8 @@ public class EmailVerification {
 
     @Test
     public void emailVerification() {
-        List<String> listEmails = FileUtils.readFileToStringList(PROJECT_ROOT+"src\\test\\resources\\usernames.txt", 2);
-        List<String> listPasses = FileUtils.readFileToStringList(PROJECT_ROOT+"src\\test\\resources\\passwords.txt", 2);
+        List<String> listEmails = FileUtils.readFileToStringList(PROJECT_ROOT+"src\\test\\resources\\usernames.txt");
+        List<String> listPasses = FileUtils.readFileToStringList(PROJECT_ROOT+"src\\test\\resources\\passwords.txt");
 
         for (int i = 0; i < listEmails.size(); i++) {
             refreshDriver();
@@ -43,7 +40,7 @@ public class EmailVerification {
             startPage.linkSignUpWithEmail.click();
             wait15.withMessage("Register page is not displayed")
                     .until(ExpectedConditions.titleContains("Register"));
-            registerPage.nameForRegistrationInput.sendKeys("Irina Auto" + i);
+            registerPage.nameForRegistrationInput.sendKeys("Irina A " + i);
             registerPage.emailForRegistrationInput.sendKeys(listEmails.get(i));
             registerPage.passwordForRegistrationInput.sendKeys(listPasses.get(i));
             registerPage.buttonSignIn.click();

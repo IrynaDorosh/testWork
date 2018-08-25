@@ -1,5 +1,6 @@
-package com.plusSmilebox.pages;
+package com.plusSmilebox.pages.initialPages;
 
+import com.plusSmilebox.util.BasePage;
 import com.plusSmilebox.util.Constants;
 import com.plusSmilebox.util.Helpers;
 import org.openqa.selenium.WebDriver;
@@ -9,15 +10,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class FBloginPage {
-
-    private WebDriver driver;
-    WebDriverWait wait10;
+public class FBloginPage extends BasePage {
 
     public FBloginPage(WebDriver driver){
-        this.driver=driver;
-        PageFactory.initElements(driver, this);
-        wait10 = new WebDriverWait(driver, 10);
+        super(driver);
     }
     @FindBy(xpath = "//div[@id='email_container']/input")
     public WebElement inputFieldEmailOrPhone;
@@ -32,9 +28,8 @@ public class FBloginPage {
      * METHODS
      */
     public void logInWithFBcredentials(){
-        wait10.withMessage("inputFieldEmailOrPhone is not present")
-                .until(ExpectedConditions.visibilityOf(inputFieldEmailOrPhone));
-        inputFieldEmailOrPhone.sendKeys(Constants.EMAIL_FOR_REGISTRATION_VIA_FB);
+        waitForElementIsVisible(inputFieldEmailOrPhone, 10)
+                .sendKeys(Constants.EMAIL_FOR_REGISTRATION_VIA_FB);
         inputFieldPassword.sendKeys(Constants.PASSWORD_FOR_REGISTRATION_VIA_FB);
         buttonLogIn.click();
     }

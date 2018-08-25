@@ -1,4 +1,4 @@
-package com.plusSmilebox.pages;
+package com.plusSmilebox.pages.initialPages;
 
 import com.plusSmilebox.util.BasePage;
 import org.openqa.selenium.WebDriver;

@@ -19,20 +19,20 @@ public class ListenerSmile implements ITestListener {
     @Override
     public void onTestStart(ITestResult iTestResult) {
         Logger logger = ((BaseTest) iTestResult.getInstance()).getLogger();
-        logger.debug("*** " + iTestResult.getMethod().getMethodName() + " started ***");
+        logger.debug("STARTED: " + iTestResult.getMethod().getMethodName());
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
 //        System.out.println("The name of the testcase succedeed is :" + iTestResult.getName());
         Logger logger = ((BaseTest) iTestResult.getInstance()).getLogger();
-        logger.debug(iTestResult.getMethod().getMethodName() + " finished successfully");
+        logger.debug("SUCCESS: " + iTestResult.getMethod().getMethodName());
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         Logger logger = ((BaseTest) iTestResult.getInstance()).getLogger();
-        logger.debug(iTestResult.getMethod().getMethodName() + " FAILED");
+        logger.debug("***FAILED: " + iTestResult.getMethod().getMethodName());
 
         String methodName = iTestResult.getName().trim();
         Object currentTestClass = iTestResult.getInstance();

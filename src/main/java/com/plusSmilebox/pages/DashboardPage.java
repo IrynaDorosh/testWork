@@ -1,5 +1,6 @@
 package com.plusSmilebox.pages;
 
+import com.plusSmilebox.util.BasePage;
 import com.plusSmilebox.util.Helpers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,16 +10,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class DashboardPage {
+public class DashboardPage extends BasePage {
 
     private WebDriver driver;
-    private WebDriverWait wait8;
-
 
     public DashboardPage(WebDriver driver){
-        this.driver=driver;
-        PageFactory.initElements(driver, this);
-        wait8 = new WebDriverWait(driver,8);
+        super(driver);
     }
 
     @FindBy(xpath="//img[@src='/img/smilebox-logo-h-white.png']")
@@ -38,7 +35,6 @@ public class DashboardPage {
 
     @FindBy(xpath="//p[@class='bar-menu-subcategory-name' and text() = 'Other Business']")
     public WebElement templateOtherBusinessFromDropdownInBarHeader;
-
 
     @FindBy(xpath="//p[@class='sub-title']/span[@class='sub-name']")
     public WebElement subtitleNameAfterFiltering;
@@ -70,32 +66,26 @@ public class DashboardPage {
 
 
 
-
-
     /**
      * METHODS
      */
 
 
     public void logOutViaProvileDropdownOnDashboarPage(){
-        wait8.withMessage("iconProfileDropdown is not present")
-                .until(ExpectedConditions.visibilityOf(iconProfileDropdown));
-      iconProfileDropdown.click();
+        waitForElementIsVisible(iconProfileDropdown, 10).click();
       buttonLogOut.click();
-      Assert.assertNotEquals(driver.getTitle(), "Smilebox Dashboard");  //TODO wait for title to be absent
     }
 
     public void clickOnTemplatesDropdownInBarHeader() {  //this method is separated to 2   selectChristmasTemplatesFromDropdownInBarHeader :click and select
-        wait8.until(ExpectedConditions.visibilityOf(dropdownTemplatesFromDropdownInBarHeader));
-        dropdownTemplatesFromDropdownInBarHeader.click();
+        waitForElementIsVisible(dropdownTemplatesFromDropdownInBarHeader, 10).click();
     }
     public void selectChristmasTemplatesFromDropdown(){
-        wait8.until(ExpectedConditions.visibilityOf(listOfTemplatesFromDropdownInBarHeader));
+        waitForElementIsVisible(templateChristmasFromDropdownInBarHeader, 10);
         Assert.assertTrue(listOfTemplatesFromDropdownInBarHeader.isEnabled());
         templateChristmasFromDropdownInBarHeader.click();
     }
     public void selectOtherBusinessTemplatesFromDropdown() {
-        wait8.until(ExpectedConditions.visibilityOf(listOfTemplatesFromDropdownInBarHeader));
+        waitForElementIsVisible(listOfTemplatesFromDropdownInBarHeader, 10);
         templateOtherBusinessFromDropdownInBarHeader.click();
     }
 

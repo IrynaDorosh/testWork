@@ -1,5 +1,6 @@
-package com.plusSmilebox.pages;
+package com.plusSmilebox.pages.initialPages;
 
+import com.plusSmilebox.util.BasePage;
 import com.plusSmilebox.util.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,15 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 //https://plus.smilebox.com/Account/Login
 
-public class LogInWithEmailPage {
-
-    private WebDriver driver;
-    WebDriverWait wait10;
+public class LogInWithEmailPage extends BasePage {
 
     public LogInWithEmailPage(WebDriver driver){
-        this.driver=driver;
-        PageFactory.initElements(driver, this);
-        wait10 = new WebDriverWait(driver, 10);
+        super(driver);
     }
 
     @FindBy(xpath="//input[@id='Email']")
@@ -32,17 +28,14 @@ public class LogInWithEmailPage {
 
 
 
-
-
     /**
      * METHODS
      */
 
     public void logInWithEmail(){
         driver.manage().deleteAllCookies();
-        wait10.withMessage("inputFieldEmail is not present")
-                .until(ExpectedConditions.visibilityOf(inputFieldEmail));
-        inputFieldEmail.sendKeys(Constants.EMAIL_FOR_REGISTRATION_VIA_FB);
+        waitForElementIsVisible(inputFieldEmail, 10)
+                .sendKeys(Constants.EMAIL_FOR_REGISTRATION_VIA_FB);
         inputFieldPassword.sendKeys(Constants.PASSWORD_CURRENT_USER);
 //        JavascriptExecutor js = (JavascriptExecutor)driver;
 //        js.executeScript("arguments[0].click();", buttonSubmit);
