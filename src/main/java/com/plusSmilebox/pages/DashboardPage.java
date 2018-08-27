@@ -2,6 +2,7 @@ package com.plusSmilebox.pages;
 
 import com.plusSmilebox.util.BasePage;
 import com.plusSmilebox.util.Helpers;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.util.List;
 
 public class DashboardPage extends BasePage {
 
@@ -63,7 +66,7 @@ public class DashboardPage extends BasePage {
     @FindBy (xpath = "//button[@id='btn-personalize']")
     public WebElement buttonPersonalise;
 
-
+    private String xpathTempalteEdited = "//div[@class='mc-preview cta-popup']" ;
 
 
     /**
@@ -99,5 +102,16 @@ public class DashboardPage extends BasePage {
     }
 
 
-
+    public WebElement findTemplateWiThInnerText(String innerText) { //adjust for if many pages
+        WebElement resultTemplate = null;
+        List <WebElement> templates = driver.findElements(By.xpath(this.xpathTempalteEdited));
+        for (int i=0; i<templates.size(); i++){
+            String inText = templates.get(i).getAttribute(innerText);
+            if (inText.equals(innerText)) {
+                resultTemplate =  templates.get(i);
+                break;
+            }
+        }
+        return resultTemplate;
+    }
 }

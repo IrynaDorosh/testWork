@@ -6,6 +6,7 @@ import com.plusSmilebox.pages.initialPages.RegisterPage;
 import com.plusSmilebox.pages.initialPages.StartPage;
 import com.plusSmilebox.util.Constants;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -105,6 +106,26 @@ public class SmileTestSuite extends BaseTest {
         }
         logInWithEmailPage.buttonSubmit.click();
         Assert.assertEquals(driver.getTitle(), "Smilebox dashboard");
+    }
+
+    @Test (priority = 5)
+    public void shareSditedTemplateOnFacebook() throws InterruptedException {
+        initialStepRedirectsToDashboardPage();
+        dashboardPage.tabMyCreationsInBarheader.click();
+        System.out.println("000");
+        waitForTitleRefreshed("My Creations", 10);
+        System.out.println("111");
+        Thread.sleep(3000);
+        WebElement templateReadyToShare = dashboardPage.findTemplateWiThInnerText("Ready to Share");
+        System.out.println("222");
+        Thread.sleep(3000);
+        templateReadyToShare.click();
+
+            Thread.sleep(3000);
+
+
+
+
     }
 
     @Ignore
