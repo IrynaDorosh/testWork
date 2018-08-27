@@ -96,10 +96,13 @@ public class SmileTestSuite extends BaseTest {
 
     @Test(priority = 5)
     public void testShouldFail() {
-        driver.get(Constants.LINK_START_PAGE);
-
-        waitForElementIsVisible(startPage.linkLogInWithExistedAccount, 10).click();
-        waitForElementIsVisible(logInWithEmailPage.inputFieldEmail, 10).sendKeys("Invalid email");
+        driver.get(Constants.LINK_LOGIN_WITH_EMAIL_PAGE);
+        try {
+            waitForElementIsVisible(logInWithEmailPage.inputFieldEmail, 10).sendKeys("Invalid email");
+        } catch (Exception e) {
+            waitForElementIsVisible(startPage.linkLogInWithExistedAccount, 10).click();
+            waitForElementIsVisible(logInWithEmailPage.inputFieldEmail, 10).sendKeys("Invalid email");
+        }
         logInWithEmailPage.buttonSubmit.click();
         Assert.assertEquals(driver.getTitle(), "Smilebox dashboard");
     }
