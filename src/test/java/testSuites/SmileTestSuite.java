@@ -1,5 +1,6 @@
 package testSuites;
 import com.plusSmilebox.pages.*;
+import com.plusSmilebox.pages.additionalPages.FacebookPage;
 import com.plusSmilebox.pages.initialPages.FBloginPage;
 import com.plusSmilebox.pages.initialPages.LogInWithEmailPage;
 import com.plusSmilebox.pages.initialPages.RegisterPage;
@@ -27,6 +28,7 @@ public class SmileTestSuite extends BaseTest {
     private MyCreationsPage myCreationsPage;
     private final static Logger logger = Logger.getLogger(SmileTestSuite.class);
     private RegisterPage registerPage;
+    private FacebookPage facebookPage;
 
     @Override
     public Logger getLogger() {
@@ -47,6 +49,7 @@ public class SmileTestSuite extends BaseTest {
         editorPage = new EditorPage(driver);
         myCreationsPage= new MyCreationsPage(driver);
         registerPage = new RegisterPage(driver);
+        facebookPage = new FacebookPage(driver);
 
     }
 
@@ -108,20 +111,19 @@ public class SmileTestSuite extends BaseTest {
         Assert.assertEquals(driver.getTitle(), "Smilebox dashboard");
     }
 
+
     @Test (priority = 5)
     public void shareSditedTemplateOnFacebook() throws InterruptedException {
+        facebookPage.logInToFB();
         initialStepRedirectsToDashboardPage();
         dashboardPage.tabMyCreationsInBarheader.click();
-        System.out.println("000");
-        waitForTitleRefreshed("My Creations", 10);
-        System.out.println("111");
+        waitForTitleRefreshed("My Creation", 10);
         Thread.sleep(3000);
-        WebElement templateReadyToShare = dashboardPage.findTemplateWiThInnerText("Ready to Share");
-        System.out.println("222");
+        dashboardPage.shareButtonFB.click();
         Thread.sleep(3000);
-        templateReadyToShare.click();
 
-            Thread.sleep(3000);
+
+
 
 
 

@@ -14,4 +14,7 @@ public class Constants {
     public static final String PASSWORD_FOR_REGISTRATION_VIA_FB = "qwe123rty";
     public static final String PASSWORD_CURRENT_USER ="qwerty123";
 
+
+    public static final String FB_EMAIL = "applebox@bigmir.net";
+    public static final String FB_PASS = "qwe123rty";
 }

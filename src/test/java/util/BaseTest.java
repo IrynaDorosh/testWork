@@ -8,16 +8,22 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BaseTest {
     static {
-        System.setProperty("webdriver.chrome.driver", "D:\\AutoProjects\\AutoSmile\\testWork\\libs\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "D:\\AutoProjects\\AutoSmile\\testWork\\libs\\chromedriver.exe");
     }
 
-    protected WebDriver driver = new ChromeDriver();
+    protected  ChromeOptions options = new ChromeOptions()
+    {{addArguments("--disable-notifications"); }};
+
+    protected WebDriver driver= new ChromeDriver(options);
+
+    //protected WebDriver driver = new ChromeDriver();
     protected WebDriverWait wait15 = new WebDriverWait(driver, 15);
     private StartPage startPage = new StartPage(driver);
     private LogInWithEmailPage logInWithEmailPage = new LogInWithEmailPage(driver);
@@ -33,10 +39,11 @@ public abstract class BaseTest {
         driver.get(Constants.LINK_MAIN_PAGE);
         String title = driver.getTitle();
         if("Welcome".equals(title)) {
-            waitForElementIsVisible(startPage.linkLogInWithExistedAccount, 10).click();
-            waitForTitleRefreshed("Login", 10);
+            driver.get(Constants.LINK_START_PAGE);
+            startPage.clickLinkLogInWithExistedAccount();
             logInWithEmailPage.logInWithEmail();
-            waitForTitleRefreshed("Smilebox Dashboard", 10);
+            waitForTitleRefreshed("Smilebox Dashboard", 20);
+
             }
         if("Login".equals(title)){
             logInWithEmailPage.logInWithEmail();

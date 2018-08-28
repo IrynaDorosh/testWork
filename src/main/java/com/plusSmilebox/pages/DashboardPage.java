@@ -66,7 +66,10 @@ public class DashboardPage extends BasePage {
     @FindBy (xpath = "//button[@id='btn-personalize']")
     public WebElement buttonPersonalise;
 
-    private String xpathTempalteEdited = "//div[@class='mc-preview cta-popup']" ;
+    @FindBy (xpath = "//div[@data-status='Created']//ancestor::div[@class='mc-box']//a[@class='mc-action mc-action-share-option mc-fb-icon has-tooltip']")
+    public WebElement shareButtonFB;
+
+    //div[@data-status='Created']//ancestor::div[@class='mc-box']//a[@class='mc-action mc-action-share-option mc-fb-icon has-tooltip']
 
 
     /**
@@ -92,8 +95,6 @@ public class DashboardPage extends BasePage {
         templateOtherBusinessFromDropdownInBarHeader.click();
     }
 
-
-
     public void selectACategoryFromDropDownInFilters() throws InterruptedException {
         dropDownAllCategoriesInFilters.click();
         Assert.assertTrue(listDropDownOfAllCategories.isEnabled());
@@ -102,16 +103,5 @@ public class DashboardPage extends BasePage {
     }
 
 
-    public WebElement findTemplateWiThInnerText(String innerText) { //adjust for if many pages
-        WebElement resultTemplate = null;
-        List <WebElement> templates = driver.findElements(By.xpath(this.xpathTempalteEdited));
-        for (int i=0; i<templates.size(); i++){
-            String inText = templates.get(i).getAttribute(innerText);
-            if (inText.equals(innerText)) {
-                resultTemplate =  templates.get(i);
-                break;
-            }
-        }
-        return resultTemplate;
-    }
+
 }
