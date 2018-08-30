@@ -23,7 +23,6 @@ public abstract class BaseTest {
 
     protected WebDriver driver= new ChromeDriver(options);
 
-    //protected WebDriver driver = new ChromeDriver();
     protected WebDriverWait wait15 = new WebDriverWait(driver, 15);
     private StartPage startPage = new StartPage(driver);
     private LogInWithEmailPage logInWithEmailPage = new LogInWithEmailPage(driver);
@@ -45,28 +44,14 @@ public abstract class BaseTest {
             waitForTitleRefreshed("Smilebox Dashboard", 20);
 
             }
-        if("Login".equals(title)){
+        else if("Login".equals(title)){
             logInWithEmailPage.logInWithEmail();
             waitForTitleRefreshed("Smilebox Dashboard", 10);
         }
-        if (!title.equals("Smilebox Dashboard")) {
+        else if (!title.equals("Smilebox Dashboard")) {
             getLogger().error("Cannot get to Dashboard page. Current page title after refreshing is " + title);
         }
         }
-
-
-    protected void logInWithEmailFromStartPage() {
-        driver.get(Constants.LINK_START_PAGE);
-        wait15.withMessage("linkLogInWithExistedAccount is not visible")
-                .until(ExpectedConditions.visibilityOf(startPage.linkLogInWithExistedAccount));
-        startPage.linkLogInWithExistedAccount.click();
-        wait15.withMessage("Login Page is not displayed")
-                .until(ExpectedConditions.titleContains("Login"));
-        logInWithEmailPage.logInWithEmail();
-        wait15.withMessage("Smilebox Dashboard page is not displayed")
-                .until(ExpectedConditions.titleContains("Smilebox Dashboard"));
-    }
-
 
     protected WebElement waitForElementIsVisible(WebElement element, int timeToWait) { // the same in BaseTest
         wait = new WebDriverWait(driver, timeToWait);
