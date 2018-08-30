@@ -24,7 +24,6 @@ public class ListenerSmile implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-//        System.out.println("The name of the testcase succedeed is :" + iTestResult.getName());
         Logger logger = ((BaseTest) iTestResult.getInstance()).getLogger();
         logger.debug("SUCCESS: " + iTestResult.getMethod().getMethodName());
     }
@@ -32,7 +31,7 @@ public class ListenerSmile implements ITestListener {
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         Logger logger = ((BaseTest) iTestResult.getInstance()).getLogger();
-        logger.debug("***FAILED: " + iTestResult.getMethod().getMethodName());
+        logger.debug("* FAILED *: " + iTestResult.getMethod().getMethodName());
 
         String methodName = iTestResult.getName().trim();
         Object currentTestClass = iTestResult.getInstance();
@@ -57,7 +56,7 @@ public class ListenerSmile implements ITestListener {
 
     private void takeScreenShot(WebDriver driver, String methodName) {
         if (driver != null) {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy___HH-mm-ss");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy__HH:mm:ss");
             String formattedDate = simpleDateFormat.format(new Date());
 
             File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

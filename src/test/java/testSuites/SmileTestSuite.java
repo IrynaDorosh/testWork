@@ -7,7 +7,8 @@ import com.plusSmilebox.pages.initialPages.RegisterPage;
 import com.plusSmilebox.pages.initialPages.StartPage;
 import com.plusSmilebox.util.Constants;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -23,7 +24,6 @@ public class SmileTestSuite extends BaseTest {
     private FBloginPage fBloginPage;
     private DashboardPage dashboardPage;
     private LogInWithEmailPage logInWithEmailPage;
-    private WebDriverWait wait10;
     private EditorPage editorPage;
     private MyCreationsPage myCreationsPage;
     private final static Logger logger = Logger.getLogger(SmileTestSuite.class);
@@ -45,7 +45,6 @@ public class SmileTestSuite extends BaseTest {
         fBloginPage = new FBloginPage(driver);
         logInWithEmailPage = new LogInWithEmailPage(driver);
         dashboardPage = new DashboardPage(driver);
-        wait10 = new WebDriverWait(driver, 10);
         editorPage = new EditorPage(driver);
         myCreationsPage= new MyCreationsPage(driver);
         registerPage = new RegisterPage(driver);
@@ -60,7 +59,7 @@ public class SmileTestSuite extends BaseTest {
         waitForTitleRefreshed("Facebook", 20);
         fBloginPage.logInWithFBcredentials();
         waitForTitleRefreshed("Smilebox Dashboard", 20);
-        Assert.assertEquals("Smilebox Dashboard", driver.getTitle());
+        //Assert.assertEquals("Smilebox Dashboard", driver.getTitle());
         dashboardPage.logOutViaProvileDropdownOnDashboarPage();
         Assert.assertNotEquals(driver.getTitle(), "Smilebox Dashboard");
     }
@@ -111,29 +110,19 @@ public class SmileTestSuite extends BaseTest {
         Assert.assertEquals(driver.getTitle(), "Smilebox dashboard");
     }
 
-
+    @Ignore
     @Test (priority = 5)
     public void shareSditedTemplateOnFacebook() throws InterruptedException {
-        facebookPage.logInToFB();
+        //facebookPage.logInToFB();
         initialStepRedirectsToDashboardPage();
         dashboardPage.tabMyCreationsInBarheader.click();
         waitForTitleRefreshed("My Creation", 10);
+        dashboardPage.buttonShare_readyToShareTemplate.click();
+        waitForElementIsVisible(dashboardPage.buttonShareFB_readyToShareTemplate, 10).click();
         Thread.sleep(3000);
-        dashboardPage.shareButtonFB.click();
-        Thread.sleep(3000);
-
-
-
-
-
-
 
     }
 
-    @Ignore
-    @Test
-    public void testTest() throws InterruptedException {
-    }
 
     @AfterClass
     public void afterClass() {

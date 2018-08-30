@@ -4,8 +4,10 @@
 
     <test name="SMILE FIRST TESTS">
 
+
         <classes>
             <class name="testSuites.SmileTestSuite" />
+            <!-- <class name="testSuites.ttt" /> -->
         </classes>
     </test>
 

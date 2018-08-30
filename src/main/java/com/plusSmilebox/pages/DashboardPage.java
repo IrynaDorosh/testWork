@@ -67,9 +67,15 @@ public class DashboardPage extends BasePage {
     public WebElement buttonPersonalise;
 
     @FindBy (xpath = "//div[@data-status='Created']//ancestor::div[@class='mc-box']//a[@class='mc-action mc-action-share-option mc-fb-icon has-tooltip']")
-    public WebElement shareButtonFB;
+    public WebElement buttonShareFB_readyToShareTemplate;
+
+    @FindBy (xpath="//div[@data-status='Created']//ancestor::div[@class='mc-box']//child::button[@class='mc-action-share']")
+    public WebElement buttonShare_readyToShareTemplate;
 
     //div[@data-status='Created']//ancestor::div[@class='mc-box']//a[@class='mc-action mc-action-share-option mc-fb-icon has-tooltip']
+
+    @FindBy (xpath="//div[@class='img-container' and parent::div//p[@title='Spooktacular Celebration']]")
+    public WebElement templateFlyerFreeSpooktacular;
 
 
     /**
