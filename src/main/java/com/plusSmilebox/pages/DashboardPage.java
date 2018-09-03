@@ -88,9 +88,9 @@ public class DashboardPage extends BasePage {
       buttonLogOut.click();
     }
 
-    public void clickOnTemplatesDropdownInBarHeader() {  //this method is separated to 2   selectChristmasTemplatesFromDropdownInBarHeader :click and select
-        waitForElementIsVisible(dropdownTemplatesFromDropdownInBarHeader, 10).click();
-    }
+//    public void clickOnTemplatesDropdownInBarHeader() {  //this method is separated to 2   selectChristmasTemplatesFromDropdownInBarHeader :click and select
+//        waitForElementIsVisible(dropdownTemplatesFromDropdownInBarHeader, 10).click();
+//    }
     public void selectChristmasTemplatesFromDropdown(){
         waitForElementIsVisible(templateChristmasFromDropdownInBarHeader, 10);
         Assert.assertTrue(listOfTemplatesFromDropdownInBarHeader.isEnabled());

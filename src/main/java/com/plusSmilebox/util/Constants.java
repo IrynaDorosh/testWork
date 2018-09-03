@@ -10,11 +10,11 @@ public class Constants {
     public static final String LINK_MAIN_PAGE = "https://plus.smilebox.com/";
     public static final String LINK_MY_CREATIONS_PAGE = "https://plus.smilebox.com/MyCreations";
 
-    public static final String EMAIL_FOR_REGISTRATION_VIA_FB = "applebox@bigmir.net";
+    public static final String EMAIL_FOR_REGISTRATION_VIA_FB = "miadudkina@gmail.com";
     public static final String PASSWORD_FOR_REGISTRATION_VIA_FB = "qwe123rty";
     public static final String PASSWORD_CURRENT_USER ="qwerty123";
 
 
-    public static final String FB_EMAIL = "applebox@bigmir.net";
+    public static final String FB_EMAIL = "miadudkina@gmail.com";
     public static final String FB_PASS = "qwe123rty";
 }
