@@ -1,5 +1,6 @@
 package com.plusSmilebox.util;
 
+import com.plusSmilebox.pages.DashboardPage;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -18,13 +19,17 @@ public abstract class BasePage {
     Logger logger = Logger.getLogger(BasePage.class);
 
 
+
     public BasePage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver, this);
         wait10 = new WebDriverWait(driver,10);
     }
 
-    // check that WebElement exists in DOM, no matter if display, visible, enable
+
+
+
+
 
     protected WebElement waitForElementIsVisible(WebElement element, int timeToWait) { // the same in BaseTest
         wait = new WebDriverWait(driver, timeToWait);

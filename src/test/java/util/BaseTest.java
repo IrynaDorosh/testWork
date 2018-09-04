@@ -1,5 +1,7 @@
 package util;
 
+import com.plusSmilebox.pages.DashboardPage;
+import com.plusSmilebox.pages.elements.DisplayWidgetElement;
 import com.plusSmilebox.pages.initialPages.LogInWithEmailPage;
 import com.plusSmilebox.pages.initialPages.StartPage;
 import com.plusSmilebox.util.Constants;
@@ -20,19 +22,25 @@ public abstract class BaseTest {
 
     protected  ChromeOptions options = new ChromeOptions()
     {{addArguments("--disable-notifications"); }};
-
     protected WebDriver driver= new ChromeDriver(options);
 
     protected WebDriverWait wait15 = new WebDriverWait(driver, 15);
-    private StartPage startPage = new StartPage(driver);
-    private LogInWithEmailPage logInWithEmailPage = new LogInWithEmailPage(driver);
-    protected WebDriverWait wait;
+    protected StartPage startPage = new StartPage(driver);
+    protected LogInWithEmailPage logInWithEmailPage = new LogInWithEmailPage(driver);
+    protected DisplayWidgetElement displayWidgetElement = new DisplayWidgetElement(driver);
+    protected DashboardPage dashboardPage =  new DashboardPage(driver);
 
+
+    protected WebDriverWait wait;
     public WebDriver getDriver() {
         return driver;
     }
 
     public abstract Logger getLogger();
+
+    /**
+     * METHODS
+     */
 
     protected void initialStepRedirectsToDashboardPage(){
         driver.get(Constants.LINK_MAIN_PAGE);

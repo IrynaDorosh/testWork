@@ -78,6 +78,13 @@ public class DashboardPage extends BasePage {
     @FindBy (xpath = xpTemplatesFiltersInHeader)
     public WebElement templatesFiltersInHeader;
 
+    public final String xpFormatBoxSlideshow= "//span[@class='format-box' and contains(text(), 'Slideshow')]";
+    public final String xpFormatBoxInvitation= "//span[@class='format-box' and contains(text(), 'Invitation')]";
+    public final String xpFormatBoxGreeting= "//span[@class='format-box' and contains(text(), 'Greeting')]";
+    public final String xpFormatBoxFlyer= "//span[@class='format-box' and contains(text(), 'Flyer')]";
+
+
+
 
     /**
      * METHODS
@@ -97,23 +104,45 @@ public class DashboardPage extends BasePage {
     }
 
 
-//    public int amountTemplatesDesignsInBody() throws InterruptedException {
-//        int x;
-//        int res = 0;
-//        List<WebElement> listBigTemplates;
-//        JavascriptExecutor jse = (JavascriptExecutor) driver;
-//
-//        do {
-//            x = res;
-//            System.out.println("Here started list search1");
-//            jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-//            System.out.println("Here started list search2");
-//            listBigTemplates = driver.findElements(By.xpath(xptemplatesDesignsInBody));
-//            res = listBigTemplates.size();
-//            Thread.sleep(3000);
-//        } while (x < res);
-//        return res;
-//    }
+    public int amountTemplatesDesignsInBody1() throws InterruptedException {
+        int x;
+        int res = 0;
+        List<WebElement> listBigTemplates;
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+
+        do {
+            x = res;
+            jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+            listBigTemplates = driver.findElements(By.xpath(xptemplatesDesignsInBody));
+            res = listBigTemplates.size();
+            Thread.sleep(3000);
+        } while (x < res);
+        return res;
+    }
+
+    public List<WebElement> listTemplatesDesignsInBody1() throws InterruptedException {
+        int x;
+        int res = 0;
+        List<WebElement> listBigTemplates;
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+
+        do {
+            x = res;
+            jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+            listBigTemplates = driver.findElements(By.xpath(xptemplatesDesignsInBody));
+            res = listBigTemplates.size();
+            Thread.sleep(3000);
+        } while (x < res);
+        return listBigTemplates;
+    }
+
+
+
+
+
+
+
+
 
 //    public List<WebElement> listTemplatesFiltersInHeader(){
 //        waitForElementIsVisible(dropdownTemplatesInBarHeader, 10).click();

@@ -21,15 +21,13 @@ import java.util.concurrent.TimeUnit;
 @Listeners(ListenerSmile.class)
 public class SmileTestSuite extends BaseTest {
 
-    private StartPage startPage;
-    private FBloginPage fBloginPage;
-    private DashboardPage dashboardPage;
-    private LogInWithEmailPage logInWithEmailPage;
-    private EditorPage editorPage;
-    private MyCreationsPage myCreationsPage;
-    private final static Logger logger = Logger.getLogger(SmileTestSuite.class);
-    private RegisterPage registerPage;
-    private FacebookPage facebookPage;
+    protected FBloginPage fBloginPage;
+
+    protected EditorPage editorPage;
+    protected MyCreationsPage myCreationsPage;
+    protected final static Logger logger = Logger.getLogger(SmileTestSuite.class);
+    protected RegisterPage registerPage;
+    protected FacebookPage facebookPage;
 
     @Override
     public Logger getLogger() {
@@ -42,10 +40,7 @@ public class SmileTestSuite extends BaseTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        startPage = new StartPage(driver);
         fBloginPage = new FBloginPage(driver);
-        logInWithEmailPage = new LogInWithEmailPage(driver);
-        dashboardPage = new DashboardPage(driver);
         editorPage = new EditorPage(driver);
         myCreationsPage= new MyCreationsPage(driver);
         registerPage = new RegisterPage(driver);
@@ -93,12 +88,11 @@ public class SmileTestSuite extends BaseTest {
 
     }
  //TODO move this method to dashboard page
-    private int amountTemplatesDesignsInBody() throws InterruptedException {
+    protected int amountTemplatesDesignsInBody() throws InterruptedException {
         int x;
         int res = 0;
         List<WebElement> listBigTemplates;
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-
         do {
             x = res;
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
