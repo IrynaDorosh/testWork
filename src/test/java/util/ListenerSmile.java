@@ -56,7 +56,7 @@ public class ListenerSmile implements ITestListener {
 
     private void takeScreenShot(WebDriver driver, String methodName) {
         if (driver != null) {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy__HH:mm:ss");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yy [HH.mm.ss]");
             String formattedDate = simpleDateFormat.format(new Date());
 
             File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

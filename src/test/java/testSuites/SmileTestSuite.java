@@ -10,15 +10,11 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import util.BaseTest;
 import util.ListenerSmile;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -76,30 +72,28 @@ public class SmileTestSuite extends BaseTest {
         waitForTitleRefreshed("Smilebox Dashboard", 20);
         Assert.assertEquals(driver.getTitle(), "Smilebox Dashboard");
     }
-
+    //after selecting filters in Template header, Designs in body are refreshed (and become less) and title refreshed too
     @Test(priority = 3)
-    public void testUserCanSelectTemplatesFromHeaderContainer_FirstAndLast() throws InterruptedException {
+    public void testUserSelectTemplatesFromHeader_FirstAndLast() throws InterruptedException {
         initialStepRedirectsToDashboardPage();
-        //Assert.assertFalse(isElementDisplayed(dashboardPage.subtitleNameAfterFiltering)); //to ensure that no templates are selected
-        System.out.println("RESULT IS: " + amountTemplatesInBody());
+        int amountDesignsBeforeFiltering = amountTemplatesDesignsInBody(); //all Designs available (325 or so)
+        logger.info("amountTemplatesDesignsInBody = " + amountDesignsBeforeFiltering);
 
-        // amount all big templates
-        // amount cat templates (verif >2) >>
-        //select 1st cat templ
-        // new big templ < all big, title changed
-        //sel last templ
-        //// new big templ < all big, title changed
+        listTemplatesFiltersInHeader().get(0).click(); // select first filter (e.g. Christmas) in header
+        waitForTitleRefreshed("Search results", 10);
+        int amountDesignsAfterFiltering = amountTemplatesDesignsInBody();
+        Assert.assertTrue(amountDesignsBeforeFiltering > amountDesignsAfterFiltering); //verify that designs are refreshed after filtering
+        logger.info("amountDesignsAfterFiltering = " + amountDesignsAfterFiltering);
 
-//        waitForElementIsVisible(dashboardPage.dropdownTemplatesFromDropdownInBarHeader, 10).click();
-//
-//        dashboardPage.selectChristmasTemplatesFromDropdown();
-//        Assert.assertEquals(dashboardPage.subtitleNameAfterFiltering.getText(), "Christmas");
-//        waitForElementIsVisible(dashboardPage.dropdownTemplatesFromDropdownInBarHeader, 10).click();
-//        dashboardPage.selectOtherBusinessTemplatesFromDropdown();
-//        Assert.assertEquals(dashboardPage.subtitleNameAfterFiltering.getText(), "Other Business");
+        listTemplatesFiltersInHeader().get(listTemplatesFiltersInHeader().size()-1).click(); // click on last filter (e.g. Other Business)
+        waitForTitleRefreshed("Search results", 10);
+        int amountDesignsAfterFiltering2 = amountTemplatesDesignsInBody();
+        Assert.assertTrue(amountDesignsBeforeFiltering > amountDesignsAfterFiltering2); //verify that designs are refreshed
+        logger.info("amountDesignsAfterFiltering2 = " + amountDesignsAfterFiltering2);
+
     }
-
-    public int amountTemplatesInBody() throws InterruptedException {
+ //TODO move this method to dashboard page
+    private int amountTemplatesDesignsInBody() throws InterruptedException {
         int x;
         int res = 0;
         List<WebElement> listBigTemplates;
@@ -108,12 +102,22 @@ public class SmileTestSuite extends BaseTest {
         do {
             x = res;
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-            listBigTemplates = driver.findElements(By.xpath("//div[@class='design-container design-pop']"));
+            listBigTemplates = driver.findElements(By.xpath(dashboardPage.xptemplatesDesignsInBody));
             res = listBigTemplates.size();
-            Thread.sleep(4000);
+            Thread.sleep(3000);
         } while (x < res);
         return res;
     }
+    //TODO move this method to dashboard page
+    private List<WebElement> listTemplatesFiltersInHeader(){
+        waitForElementIsVisible(dashboardPage.dropdownTemplatesInBarHeader, 10).click();
+        List<WebElement> listTemplatesFilters = driver.findElements(By.xpath(dashboardPage.xpTemplatesFiltersInHeader));
+        Assert.assertTrue(listTemplatesFilters.size()>2);
+        return listTemplatesFilters;
+    }
+
+
+
 
     @Test(priority = 4)
     public void testCheckThatCreationListDisplayedAfterClickingOnMyCreationsTab() throws InterruptedException {

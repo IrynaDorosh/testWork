@@ -1,21 +1,17 @@
 package com.plusSmilebox.pages;
 
 import com.plusSmilebox.util.BasePage;
-import com.plusSmilebox.util.Helpers;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.List;
 
 public class DashboardPage extends BasePage {
 
-    private WebDriver driver;
 
     public DashboardPage(WebDriver driver){
         super(driver);
@@ -25,7 +21,7 @@ public class DashboardPage extends BasePage {
     public WebElement logoSmilebox;
 
     @FindBy(xpath="//span[text() = 'TEMPLATES']")
-    public WebElement dropdownTemplatesFromDropdownInBarHeader;
+    public WebElement dropdownTemplatesInBarHeader;
 
     @FindBy(xpath="//a[@href='/MyCreations' and text() = 'MY CREATIONS']")
     public WebElement tabMyCreationsInBarheader;
@@ -62,7 +58,6 @@ public class DashboardPage extends BasePage {
      @FindBy (xpath = "//div[@class='img-container' and parent::div//p[@title='Join Us Floral']]")
      public WebElement templateExampleJoimUsFloral;
 
-
     @FindBy (xpath = "//button[@id='btn-personalize']")
     public WebElement buttonPersonalise;
 
@@ -72,10 +67,16 @@ public class DashboardPage extends BasePage {
     @FindBy (xpath="//div[@data-status='Created']//ancestor::div[@class='mc-box']//child::button[@class='mc-action-share']")
     public WebElement buttonShare_readyToShareTemplate;
 
-    //div[@data-status='Created']//ancestor::div[@class='mc-box']//a[@class='mc-action mc-action-share-option mc-fb-icon has-tooltip']
-
     @FindBy (xpath="//div[@class='img-container' and parent::div//p[@title='Spooktacular Celebration']]")
     public WebElement templateFlyerFreeSpooktacular;
+
+    public final String xptemplatesDesignsInBody = "//div[@class='design-container design-pop']";
+    @FindBy (xpath = xptemplatesDesignsInBody )
+    public WebElement templatesDesignsInBody;
+
+    public final String xpTemplatesFiltersInHeader = "//li[@class='bar-menu-subcategory-name-wrap']";
+    @FindBy (xpath = xpTemplatesFiltersInHeader)
+    public WebElement templatesFiltersInHeader;
 
 
     /**
@@ -88,25 +89,40 @@ public class DashboardPage extends BasePage {
       buttonLogOut.click();
     }
 
-//    public void clickOnTemplatesDropdownInBarHeader() {  //this method is separated to 2   selectChristmasTemplatesFromDropdownInBarHeader :click and select
-//        waitForElementIsVisible(dropdownTemplatesFromDropdownInBarHeader, 10).click();
-//    }
-    public void selectChristmasTemplatesFromDropdown(){
-        waitForElementIsVisible(templateChristmasFromDropdownInBarHeader, 10);
-        Assert.assertTrue(listOfTemplatesFromDropdownInBarHeader.isEnabled());
-        templateChristmasFromDropdownInBarHeader.click();
-    }
-    public void selectOtherBusinessTemplatesFromDropdown() {
-        waitForElementIsVisible(listOfTemplatesFromDropdownInBarHeader, 10);
-        templateOtherBusinessFromDropdownInBarHeader.click();
-    }
 
     public void selectACategoryFromDropDownInFilters() throws InterruptedException {
         dropDownAllCategoriesInFilters.click();
         Assert.assertTrue(listDropDownOfAllCategories.isEnabled());
         subcategoryFromFilters.click();
-
     }
+
+
+//    public int amountTemplatesDesignsInBody() throws InterruptedException {
+//        int x;
+//        int res = 0;
+//        List<WebElement> listBigTemplates;
+//        JavascriptExecutor jse = (JavascriptExecutor) driver;
+//
+//        do {
+//            x = res;
+//            System.out.println("Here started list search1");
+//            jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//            System.out.println("Here started list search2");
+//            listBigTemplates = driver.findElements(By.xpath(xptemplatesDesignsInBody));
+//            res = listBigTemplates.size();
+//            Thread.sleep(3000);
+//        } while (x < res);
+//        return res;
+//    }
+
+//    public List<WebElement> listTemplatesFiltersInHeader(){
+//        waitForElementIsVisible(dropdownTemplatesInBarHeader, 10).click();
+//        List<WebElement> listTemplatesFilters = driver.findElements(By.xpath(xpTemplatesFiltersInHeader));
+//        Assert.assertTrue(listTemplatesFilters.size()>2);
+//        return listTemplatesFilters;
+//    }
+
+
 
 
 
