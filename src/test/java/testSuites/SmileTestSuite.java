@@ -2,13 +2,10 @@ package testSuites;
 import com.plusSmilebox.pages.*;
 import com.plusSmilebox.pages.additionalPages.FacebookPage;
 import com.plusSmilebox.pages.initialPages.FBloginPage;
-import com.plusSmilebox.pages.initialPages.LogInWithEmailPage;
 import com.plusSmilebox.pages.initialPages.RegisterPage;
-import com.plusSmilebox.pages.initialPages.StartPage;
 import com.plusSmilebox.util.Constants;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -22,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 public class SmileTestSuite extends BaseTest {
 
     protected FBloginPage fBloginPage;
-
     protected EditorPage editorPage;
     protected MyCreationsPage myCreationsPage;
     protected final static Logger logger = Logger.getLogger(SmileTestSuite.class);
@@ -67,88 +63,52 @@ public class SmileTestSuite extends BaseTest {
         waitForTitleRefreshed("Smilebox Dashboard", 20);
         Assert.assertEquals(driver.getTitle(), "Smilebox Dashboard");
     }
-    //after selecting filters in Template header, Designs in body are refreshed (and become less) and title refreshed too
+
+    @Test (priority = 3)
+    public void testVerifyCheckboxesOnDasboard() throws InterruptedException {
+        initialStepRedirectsToDashboardPage();
+
+        List<WebElement> listSlideshow = displayWidgetElement.listDesignsAfterUntickAll_ExceptSlideshow();
+        List<WebElement> formatSlideshow = driver.findElements(By.xpath(dashboardPage.xpFormatBoxSlideshow));
+        logger.info("Amount of 'Slideshow' formats are: "+ formatSlideshow.size());
+        Assert.assertTrue(displayWidgetElement.comparingAmountOfDesignsAndFormats(listSlideshow, formatSlideshow));
+
+        dashboardPage.logoSmilebox.click(); //to get to the top of the page
+        List<WebElement> listInvitation = displayWidgetElement.listDesignsAfterUntickAll_ExceptInvitation();
+        List<WebElement> formatInvitation = driver.findElements(By.xpath(dashboardPage.xpFormatBoxInvitation));
+        logger.info("Amount of 'Invitation' formats are: "+ formatInvitation.size());
+        Assert.assertTrue(displayWidgetElement.comparingAmountOfDesignsAndFormats(listInvitation,formatInvitation ));
+
+        dashboardPage.logoSmilebox.click();
+        List<WebElement> listGreetings = displayWidgetElement.listDesignsAfterUntickAll_ExceptGreetings();
+        List<WebElement> formatGreetings = driver.findElements(By.xpath(dashboardPage.xpFormatBoxGreeting));
+        logger.info("Amount of 'Greetings' formats are: "+ formatGreetings.size());
+        Assert.assertTrue(displayWidgetElement.comparingAmountOfDesignsAndFormats(listGreetings,formatGreetings));
+
+        dashboardPage.logoSmilebox.click();
+        List<WebElement> listFlyers = displayWidgetElement.listDesignsAfterUntickAll_ExceptFlyer();
+        List<WebElement> formatFlyers = driver.findElements(By.xpath(dashboardPage.xpFormatBoxFlyer));
+        logger.info("Amount of 'Flyers' formats are: "+ formatFlyers.size());
+        Assert.assertTrue(displayWidgetElement.comparingAmountOfDesignsAndFormats(listFlyers, formatFlyers));
+    }
+
     @Test(priority = 3)
     public void testUserSelectTemplatesFromHeader_FirstAndLast() throws InterruptedException {
         initialStepRedirectsToDashboardPage();
-        int amountDesignsBeforeFiltering = amountTemplatesDesignsInBody(); //all Designs available (325 or so)
+        int amountDesignsBeforeFiltering = dashboardPage.amountTemplatesDesignsInBody1(); //all Designs available (325 or so)
         logger.info("amountTemplatesDesignsInBody = " + amountDesignsBeforeFiltering);
 
-        listTemplatesFiltersInHeader().get(0).click(); // select first filter (e.g. Christmas) in header
-        waitForTitleRefreshed("Search results", 10);
-        int amountDesignsAfterFiltering = amountTemplatesDesignsInBody();
+        dashboardPage.listTemplatesFiltersInHeader().get(0).click(); // select first filter (e.g. Christmas) in header
+        waitForElementIsVisible(dashboardPage.templatesDesignsInBody, 10);
+        int amountDesignsAfterFiltering = dashboardPage.amountTemplatesDesignsInBody1();
         Assert.assertTrue(amountDesignsBeforeFiltering > amountDesignsAfterFiltering); //verify that designs are refreshed after filtering
         logger.info("amountDesignsAfterFiltering = " + amountDesignsAfterFiltering);
 
-        listTemplatesFiltersInHeader().get(listTemplatesFiltersInHeader().size()-1).click(); // click on last filter (e.g. Other Business)
-        waitForTitleRefreshed("Search results", 10);
-        int amountDesignsAfterFiltering2 = amountTemplatesDesignsInBody();
+        dashboardPage.listTemplatesFiltersInHeader().get(dashboardPage.listTemplatesFiltersInHeader().size()-1).click(); // click on last filter (e.g. Other Business)
+        waitForElementIsVisible(dashboardPage.templatesDesignsInBody, 10);
+        int amountDesignsAfterFiltering2 = dashboardPage.amountTemplatesDesignsInBody1();
         Assert.assertTrue(amountDesignsBeforeFiltering > amountDesignsAfterFiltering2); //verify that designs are refreshed
         logger.info("amountDesignsAfterFiltering2 = " + amountDesignsAfterFiltering2);
-
-    }
- //TODO move this method to dashboard page
-    protected int amountTemplatesDesignsInBody() throws InterruptedException {
-        int x;
-        int res = 0;
-        List<WebElement> listBigTemplates;
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        do {
-            x = res;
-            jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-            listBigTemplates = driver.findElements(By.xpath(dashboardPage.xptemplatesDesignsInBody));
-            res = listBigTemplates.size();
-            Thread.sleep(3000);
-        } while (x < res);
-        return res;
-    }
-    //TODO move this method to dashboard page
-    private List<WebElement> listTemplatesFiltersInHeader(){
-        waitForElementIsVisible(dashboardPage.dropdownTemplatesInBarHeader, 10).click();
-        List<WebElement> listTemplatesFilters = driver.findElements(By.xpath(dashboardPage.xpTemplatesFiltersInHeader));
-        Assert.assertTrue(listTemplatesFilters.size()>2);
-        return listTemplatesFilters;
-    }
-
-
-
-
-    @Test(priority = 4)
-    public void testCheckThatCreationListDisplayedAfterClickingOnMyCreationsTab() throws InterruptedException {
-        initialStepRedirectsToDashboardPage();
-        dashboardPage.templateExampleJoimUsFloral.click();
-        waitForElementIsVisible(dashboardPage.buttonPersonalise, 30).click();
-        editorPage.fillInFieldsInFloralTemplate();
-        editorPage.savingModifiedTemplate();
-        driver.get(Constants.LINK_MY_CREATIONS_PAGE);
-        Assert.assertTrue(isElementDisplayed(myCreationsPage.creationList));// check assert
-        //implement functionality delete edited template
-    }
-
-    @Test(priority = 5)
-    public void testShouldFail() {
-        driver.get(Constants.LINK_LOGIN_WITH_EMAIL_PAGE);
-        try {
-            waitForElementIsVisible(logInWithEmailPage.inputFieldEmail, 10).sendKeys("Invalid email");
-        } catch (Exception e) {
-            waitForElementIsVisible(startPage.linkLogInWithExistedAccount, 10).click();
-            waitForElementIsVisible(logInWithEmailPage.inputFieldEmail, 10).sendKeys("Invalid email");
-        }
-        logInWithEmailPage.buttonSubmit.click();
-        Assert.assertEquals(driver.getTitle(), "Smilebox dashboard");
-    }
-
-    @Ignore
-    @Test (priority = 5)
-    public void shareSditedTemplateOnFacebook() throws InterruptedException {
-        //facebookPage.logInToFB();
-        initialStepRedirectsToDashboardPage();
-        dashboardPage.tabMyCreationsInBarheader.click();
-        waitForTitleRefreshed("My Creation", 10);
-        dashboardPage.buttonShare_readyToShareTemplate.click();
-        waitForElementIsVisible(dashboardPage.buttonShareFB_readyToShareTemplate, 10).click();
-        Thread.sleep(3000);
-
     }
 
 

@@ -1,14 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="SMILE FIRST TESTS">
+<suite name="SMILE GUI AUTO TESTS">
 
-    <test name="SMILE FIRST TESTS">
+<test name="Smile GUI Smoke suite">
 
 
-        <classes>
-            <class name="testSuites.SmileTestSuite" />
-            <!-- <class name="testSuites.ttt" /> -->
-        </classes>
-    </test>
+    <classes>
+        <class name="testSuites.SmileTestSuite" />
+    </classes>
+</test>
 
 </suite>

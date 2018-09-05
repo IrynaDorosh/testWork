@@ -120,7 +120,8 @@ public class DashboardPage extends BasePage {
         return res;
     }
 
-    public List<WebElement> listTemplatesDesignsInBody1() throws InterruptedException {
+
+    public List<WebElement> listTemplatesDesignsInBody() throws InterruptedException {
         int x;
         int res = 0;
         List<WebElement> listBigTemplates;
@@ -136,20 +137,12 @@ public class DashboardPage extends BasePage {
         return listBigTemplates;
     }
 
-
-
-
-
-
-
-
-
-//    public List<WebElement> listTemplatesFiltersInHeader(){
-//        waitForElementIsVisible(dropdownTemplatesInBarHeader, 10).click();
-//        List<WebElement> listTemplatesFilters = driver.findElements(By.xpath(xpTemplatesFiltersInHeader));
-//        Assert.assertTrue(listTemplatesFilters.size()>2);
-//        return listTemplatesFilters;
-//    }
+    public List<WebElement> listTemplatesFiltersInHeader(){
+        waitForElementIsVisible(dropdownTemplatesInBarHeader, 10).click();
+        List<WebElement> listTemplatesFilters = driver.findElements(By.xpath(xpTemplatesFiltersInHeader));
+        Assert.assertTrue(listTemplatesFilters.size()>2);
+        return listTemplatesFilters;
+    }
 
 
 

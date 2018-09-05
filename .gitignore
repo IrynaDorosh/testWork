@@ -8,3 +8,4 @@ screenShots/*.png
 libs/*.*
 target
 test-output
+test/InProgressTests.java

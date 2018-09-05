@@ -23,7 +23,6 @@ public abstract class BaseTest {
     protected  ChromeOptions options = new ChromeOptions()
     {{addArguments("--disable-notifications"); }};
     protected WebDriver driver= new ChromeDriver(options);
-
     protected WebDriverWait wait15 = new WebDriverWait(driver, 15);
     protected StartPage startPage = new StartPage(driver);
     protected LogInWithEmailPage logInWithEmailPage = new LogInWithEmailPage(driver);

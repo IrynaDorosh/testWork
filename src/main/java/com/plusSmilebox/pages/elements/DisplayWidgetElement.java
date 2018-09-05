@@ -5,7 +5,6 @@ import com.plusSmilebox.util.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 import java.util.List;
 
@@ -43,7 +42,7 @@ public class DisplayWidgetElement extends BasePage {
         tickDesignsFilter_Invitation.click();
         tickDesignsFilter_Greeting.click();
         tickDesignsFilter_Flyer.click();
-        List<WebElement> listAfterFilter = dashboardPage.listTemplatesDesignsInBody1();
+        List<WebElement> listAfterFilter = dashboardPage.listTemplatesDesignsInBody();
         return listAfterFilter;
     }
 
@@ -52,7 +51,7 @@ public class DisplayWidgetElement extends BasePage {
         tickDesignsFilter_Slideshow.click();
         tickDesignsFilter_Greeting.click();
         tickDesignsFilter_Flyer.click();
-        List<WebElement> listAfterFilter = dashboardPage.listTemplatesDesignsInBody1();
+        List<WebElement> listAfterFilter = dashboardPage.listTemplatesDesignsInBody();
         return listAfterFilter;
     }
 
@@ -61,7 +60,7 @@ public class DisplayWidgetElement extends BasePage {
         tickDesignsFilter_Slideshow.click();
         tickDesignsFilter_Invitation.click();
         tickDesignsFilter_Flyer.click();
-        List<WebElement> listAfterFilter = dashboardPage.listTemplatesDesignsInBody1();
+        List<WebElement> listAfterFilter = dashboardPage.listTemplatesDesignsInBody();
         return listAfterFilter;
     }
 
@@ -70,7 +69,7 @@ public class DisplayWidgetElement extends BasePage {
         tickDesignsFilter_Slideshow.click();
         tickDesignsFilter_Invitation.click();
         tickDesignsFilter_Greeting.click();
-        List<WebElement> listAfterFilter = dashboardPage.listTemplatesDesignsInBody1();
+        List<WebElement> listAfterFilter = dashboardPage.listTemplatesDesignsInBody();
         return listAfterFilter;
     }
      //amount of format vary from 0 to -3 as Designs are displayed in marketing-box in header
