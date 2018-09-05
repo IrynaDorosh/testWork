@@ -45,7 +45,7 @@ public class SmileTestSuite extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void testUserCanLogInViaFacebookButton() {
+    public void testLogInViaFacebookButton() {
         driver.get(Constants.LINK_START_PAGE);
         startPage.clickButtonLoginWithFB();
         waitForTitleRefreshed("Facebook", 20);
@@ -56,7 +56,7 @@ public class SmileTestSuite extends BaseTest {
     }
 
     @Test(priority = 2)
-    public void testUserCanLogInViaLogInWithEmailButton () {
+    public void testLogInViaLogInWithEmailButton() {
         driver.get(Constants.LINK_START_PAGE);
         startPage.clickLinkLogInWithExistedAccount();
         logInWithEmailPage.logInWithEmail();
@@ -93,7 +93,7 @@ public class SmileTestSuite extends BaseTest {
     }
 
     @Test(priority = 3)
-    public void testUserSelectTemplatesFromHeader_FirstAndLast() throws InterruptedException {
+    public void testSelectTemplatesFromHeader_FirstAndLast() throws InterruptedException {
         initialStepRedirectsToDashboardPage();
         int amountDesignsBeforeFiltering = dashboardPage.amountTemplatesDesignsInBody1(); //all Designs available (325 or so)
         logger.info("amountTemplatesDesignsInBody = " + amountDesignsBeforeFiltering);
